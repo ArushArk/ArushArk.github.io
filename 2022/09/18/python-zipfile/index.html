@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="ArushArk">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="python_Zipfile库因为近期nepCTF2022和练习都碰到了压缩包套娃的题目，写了两个脚本，在这里记录一下zipfile的学习。 简介标准库zipfile，可以用来处理压缩文件。zipfile是一个用来压缩文件和解压缩文件的模块，它有两个常用的类，分别是ZipFile和ZipInfo。其中ZipFile是主要的类，用来创建和读取zip文件，而ZipInfo是存储的zip文件的每个文件的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python_zipfile">
+<meta property="og:url" content="http://example.com/2022/09/18/python-zipfile/index.html">
+<meta property="og:site_name" content="Come ON the way">
+<meta property="og:description" content="python_Zipfile库因为近期nepCTF2022和练习都碰到了压缩包套娃的题目，写了两个脚本，在这里记录一下zipfile的学习。 简介标准库zipfile，可以用来处理压缩文件。zipfile是一个用来压缩文件和解压缩文件的模块，它有两个常用的类，分别是ZipFile和ZipInfo。其中ZipFile是主要的类，用来创建和读取zip文件，而ZipInfo是存储的zip文件的每个文件的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-18T10:59:34.000Z">
+<meta property="article:modified_time" content="2022-09-18T11:02:47.232Z">
+<meta property="article:author" content="ArushArk">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="脚本">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>python_zipfile - Come ON the way</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/shubiao.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ArushArk</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/B1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="python_zipfile"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-18 18:59" pubdate>
+          2022年9月18日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">python_zipfile</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="python-Zipfile库"><a href="#python-Zipfile库" class="headerlink" title="python_Zipfile库"></a>python_Zipfile库</h2><p>因为近期nepCTF2022和练习都碰到了压缩包套娃的题目，写了两个脚本，在这里记录一下zipfile的学习。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>标准库zipfile，可以用来处理压缩文件。<br>zipfile是一个用来压缩文件和解压缩文件的模块，它有两个常用的类，分别是ZipFile和ZipInfo。<br>其中ZipFile是主要的类，用来创建和读取zip文件，而ZipInfo是存储的zip文件的每个文件的信息的。</p>
+<h2 id="ZipFile对象"><a href="#ZipFile对象" class="headerlink" title="ZipFile对象"></a>ZipFile对象</h2><p>ZipFile 对象在概念上与 File 对象相似。<br><strong>官方文档定义：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">打开一个 ZIP 文件，file 为一个指向文件的路径（字符串），一个类文件对象或者一个 path-like <span class="hljs-built_in">object</span>。<br>形参 mode 应当为 <span class="hljs-string">&#x27;r&#x27;</span> 来读取一个存在的文件，<span class="hljs-string">&#x27;w&#x27;</span> 来截断并写入新的文件， <span class="hljs-string">&#x27;a&#x27;</span> 来添加到一个存在的文件，或者 <span class="hljs-string">&#x27;x&#x27;</span> 来仅新建并写入新的文件。如果 mode 为 <span class="hljs-string">&#x27;x&#x27;</span> 并且 file 指向已经存在的文件，则抛出 FileExistsError。如果 mode 为 <span class="hljs-string">&#x27;a&#x27;</span> 且 file 为已存在的文件，则格外的文件将被加入。如果 file 不指向 ZIP 文件，之后一个新的 ZIP 归档将被追加为此文件。这是为了将 ZIP 归档添加到另一个文件（例如 python.exe）。如果 mode 为 <span class="hljs-string">&#x27;a&#x27;</span> 并且文件不存在， 则会新建。如果 mode 为 <span class="hljs-string">&#x27;r&#x27;</span> 或 <span class="hljs-string">&#x27;a&#x27;</span>， 则文件应当可定位。<br></code></pre></td></tr></table></figure>
+
+<h2 id="ZipInfo对象"><a href="#ZipInfo对象" class="headerlink" title="ZipInfo对象"></a>ZipInfo对象</h2><p><strong>通过ZipFile的getinfo方法得到ZipInfo对象。</strong></p>
+<p>ZipFile.getinfo(name) 方法返回的是一个ZipInfo对象，表示zip文档中相应文件的信息。它支持如下属性：</p>
+<p>ZipInfo.filename： 获取文件名称。</p>
+<p>ZipInfo.date_time： 获取文件最后修改时间。返回一个包含6个元素的元组：(年, 月, 日, 时, 分, 秒)</p>
+<p>ZipInfo.compress_type： 压缩类型。</p>
+<p>ZipInfo.comment： 文档说明。</p>
+<p>ZipInfo.extr： 扩展项数据。</p>
+<p>ZipInfo.create_system： 获取创建该zip文档的系统。</p>
+<p>ZipInfo.create_version： 获取 创建zip文档的PKZIP版本。</p>
+<p>ZipInfo.extract_version： 获取 解压zip文档所需的PKZIP版本。</p>
+<p>ZipInfo.reserved： 预留字段，当前实现总是返回0。</p>
+<p>ZipInfo.flag_bits： zip标志位。</p>
+<p>ZipInfo.volume： 文件头的卷标。</p>
+<p>ZipInfo.internal_attr： 内部属性。</p>
+<p>ZipInfo.external_attr： 外部属性。</p>
+<p>ZipInfo.header_offset： 文件头偏移位。</p>
+<p>ZipInfo.CRC： 未压缩文件的CRC-32。</p>
+<p>ZipInfo.compress_size： 获取压缩后的大小。</p>
+<p>ZipInfo.file_size： 获取未压缩的文件大小。<br>ZipInfo相关属性</p>
+<p>ZipInfo.filename        获取文件名称。</p>
+<p>ZipInfo.date_time       获取文件最后修改时间。返回一个包含6个元素的元组：(年, 月, 日, 时, 分, 秒)</p>
+<p>ZipInfo.compress_type   压缩类型。</p>
+<p>ZipInfo.comment         文档说明。</p>
+<p>ZipInfo.extr            扩展项数据。</p>
+<p>ZipInfo.create_system   获取创建该zip文档的系统。</p>
+<p>ZipInfo.create_version  获取、创建zip文档的PKZIP版本。</p>
+<p>ZipInfo.extract_versio  获取、解压zip文档所需的PKZIP版本。</p>
+<p>ZipInfo.reserved        预留字段，当前实现总是返回0。</p>
+<p>ZipInfo.flag_bits       zip标志位。</p>
+<p>ZipInfo.volume          文件头的卷标。</p>
+<p>ZipInfo.internal_attr   内部属性。</p>
+<p>ZipInfo.external_attr   外部属性。</p>
+<p>ZipInfo.header_offset   文件头偏移位。</p>
+<p>ZipInfo.CRC             未压缩文件的CRC-32。</p>
+<p>ZipInfo.compress_size   获取压缩后的大小。</p>
+<p>ZipInfo.file_size       获取未压缩的文件大小</p>
+<h2 id="1-创建一个-ZipFile-对象"><a href="#1-创建一个-ZipFile-对象" class="headerlink" title="1.创建一个 ZipFile 对象"></a>1.创建一个 ZipFile 对象</h2><p>要创建一个 ZipFile对象，就调用 zipfile.ZipFile()函数，向它传入一个字符串，表示.zip文件的文件名。请注意，zipfile 是 Python 模块的名称，ZipFile()是函数的名称。ZipFile 的构造方法有两个参数，第一个参数是必选参数，接受一个字符串格式的压缩包名称，第二个参数为<strong>可选</strong>参数，表示打开模式，类似于文件操作，有r&#x2F;w&#x2F;a三种模式，分别代表读、写、添加，默认为r，即读模式。压缩使用w，解压缩使用r。</p>
+<p>mode可以省略<br>压缩需要把mode改为‘w’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile=zipfile.ZipFile(<span class="hljs-string">&quot;test.zip&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>解压需要把mode改为‘r’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile=zipfile.ZipFile(<span class="hljs-string">&quot;test.zip&quot;</span>,<span class="hljs-string">&quot;r&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="2-添加压缩文件-or-选择解压文件"><a href="#2-添加压缩文件-or-选择解压文件" class="headerlink" title="2.添加压缩文件 or 选择解压文件"></a>2.添加压缩文件 or 选择解压文件</h2><h3 id="需要使用的方法"><a href="#需要使用的方法" class="headerlink" title="需要使用的方法"></a>需要使用的方法</h3><p> ZipFile.extract(member, path&#x3D;None, pwd&#x3D;None)¶</p>
+<pre><code class="hljs">从归档中提取出一个成员放入当前工作目录；member 必须为成员的完整名称或 ZipInfo 对象。 成员的文件信息会尽可能精确地被提取。 path 指定一个要提取到的不同目录。 member 可以是一个文件名或 ZipInfo 对象。 pwd 是用于解密文件的密码。
+</code></pre>
+<p> ZipFile.extractall(path&#x3D;None, members&#x3D;None, pwd&#x3D;None)</p>
+<pre><code class="hljs">从归档中提取出所有成员放入当前工作目录。 path 指定一个要提取到的不同目录。 members 为可选项且必须为 namelist() 所返回列表的一个子集。 pwd 是用于解密文件的密码。
+</code></pre>
+<p> ZipFile.write(filename, arcname&#x3D;None, compress_type&#x3D;None, compresslevel&#x3D;None)</p>
+<pre><code class="hljs">将名为 filename 的文件写入归档，给予的归档名为 arcname (默认情况下将与 filename 一致，但是不带驱动器盘符并会移除开头的路径分隔符)。 compress_type 如果给出，它将覆盖作为构造器 compression 形参对于新条目所给出的值。 类似地，compresslevel 如果给出也将覆盖构造器。 归档必须使用 &#39;w&#39;, &#39;x&#39; 或 &#39;a&#39; 模式打开。
+</code></pre>
+<p>第二个参数是“压缩类型”参数，它告诉计算机使用怎样的算法来压缩文件。可以总是将这个值设置为zipfile.ZIP_DEFLATED（这指定了 deflate 压缩算法，它对各种类型的数据都很有效）。</p>
+<p>ZipFile.close()</p>
+<pre><code class="hljs">关闭归档文件。 你必须在退出程序之前调用 close() 否则将不会写入关键记录数据。
+</code></pre>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>写入压缩文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile.write(<span class="hljs-string">r&quot;../test.py&quot;</span>)<br>zfile.close()//关闭对象<br></code></pre></td></tr></table></figure>
+
+<p>解压文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile.extractall()//解压所有文件<br>zfile.extract(<span class="hljs-string">r&quot;test.py&quot;</span>)//解压指定文件<br>zfile.close()//关闭对象<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-其他常见方法"><a href="#3-其他常见方法" class="headerlink" title="3.其他常见方法"></a>3.其他常见方法</h2><p>ZipFile.getinfo(name)</p>
+<pre><code class="hljs">返回一个 ZipInfo 对象，其中包含有关归档成员 name 的信息。 针对一个目前并不包含于归档中的名称调用 getinfo() 将会引发 KeyError。
+</code></pre>
+<p>ZipFile.infolist()</p>
+<pre><code class="hljs">返回一个列表，其中包含每个归档成员的 ZipInfo 对象。 如果是打开一个现有归档则这些对象的排列顺序与它们对应条目在磁盘上的实际 ZIP 文件中的顺序一致。
+</code></pre>
+<p>ZipFile.namelist()</p>
+<pre><code class="hljs">返回按名称排序的归档成员列表（也就是压缩包里的文件名）。
+</code></pre>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/zipfile.html#zipfile.ZIP_BZIP2">https://docs.python.org/zh-cn/3/library/zipfile.html#zipfile.ZIP_BZIP2</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangylblog/p/13925894.html">https://www.cnblogs.com/wangylblog/p/13925894.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_38682860/article/details/114176182">https://blog.csdn.net/sinat_38682860/article/details/114176182</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/python/">#python</a>
+      
+        <a href="/tags/%E8%84%9A%E6%9C%AC/">#脚本</a>
+      
+        <a href="/tags/%E7%BC%96%E7%A8%8B/">#编程</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>python_zipfile</div>
+      <div>http://example.com/2022/09/18/python-zipfile/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ArushArk</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月18日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/09/18/web%E6%B5%85%E8%AE%B0/" title="web浅记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">web浅记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/diy/qipao.js"></script>
+<script src="/js/diy/yinghua.js"></script>
+<script src="/js/diy/timeDate.js"></script>
+<script src="/js/diy/shubiaozi.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

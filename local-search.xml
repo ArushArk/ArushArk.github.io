@@ -4,13 +4,56 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2022/09/17/hello-world/"/>
-    <url>/2022/09/17/hello-world/</url>
+    <title>web浅记</title>
+    <link href="/2022/09/18/web%E6%B5%85%E8%AE%B0/"/>
+    <url>/2022/09/18/web%E6%B5%85%E8%AE%B0/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>记得比较杂，一些web的小的细节。</p><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>echo命令执行系统命令</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">echo</span>`nl fl<span class="hljs-string">&#x27;&#x27;</span>ag.p?p`;<br></code></pre></td></tr></table></figure><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>文件包含include()，include可以无括号包含</p>]]></content>
     
     
+    <categories>
+      
+      <category>web</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>web</tag>
+      
+      <tag>浅记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>python_zipfile</title>
+    <link href="/2022/09/18/python-zipfile/"/>
+    <url>/2022/09/18/python-zipfile/</url>
+    
+    <content type="html"><![CDATA[<h2 id="python-Zipfile库"><a href="#python-Zipfile库" class="headerlink" title="python_Zipfile库"></a>python_Zipfile库</h2><p>因为近期nepCTF2022和练习都碰到了压缩包套娃的题目，写了两个脚本，在这里记录一下zipfile的学习。</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>标准库zipfile，可以用来处理压缩文件。<br>zipfile是一个用来压缩文件和解压缩文件的模块，它有两个常用的类，分别是ZipFile和ZipInfo。<br>其中ZipFile是主要的类，用来创建和读取zip文件，而ZipInfo是存储的zip文件的每个文件的信息的。</p><h2 id="ZipFile对象"><a href="#ZipFile对象" class="headerlink" title="ZipFile对象"></a>ZipFile对象</h2><p>ZipFile 对象在概念上与 File 对象相似。<br><strong>官方文档定义：</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">打开一个 ZIP 文件，file 为一个指向文件的路径（字符串），一个类文件对象或者一个 path-like <span class="hljs-built_in">object</span>。<br>形参 mode 应当为 <span class="hljs-string">&#x27;r&#x27;</span> 来读取一个存在的文件，<span class="hljs-string">&#x27;w&#x27;</span> 来截断并写入新的文件， <span class="hljs-string">&#x27;a&#x27;</span> 来添加到一个存在的文件，或者 <span class="hljs-string">&#x27;x&#x27;</span> 来仅新建并写入新的文件。如果 mode 为 <span class="hljs-string">&#x27;x&#x27;</span> 并且 file 指向已经存在的文件，则抛出 FileExistsError。如果 mode 为 <span class="hljs-string">&#x27;a&#x27;</span> 且 file 为已存在的文件，则格外的文件将被加入。如果 file 不指向 ZIP 文件，之后一个新的 ZIP 归档将被追加为此文件。这是为了将 ZIP 归档添加到另一个文件（例如 python.exe）。如果 mode 为 <span class="hljs-string">&#x27;a&#x27;</span> 并且文件不存在， 则会新建。如果 mode 为 <span class="hljs-string">&#x27;r&#x27;</span> 或 <span class="hljs-string">&#x27;a&#x27;</span>， 则文件应当可定位。<br></code></pre></td></tr></table></figure><h2 id="ZipInfo对象"><a href="#ZipInfo对象" class="headerlink" title="ZipInfo对象"></a>ZipInfo对象</h2><p><strong>通过ZipFile的getinfo方法得到ZipInfo对象。</strong></p><p>ZipFile.getinfo(name) 方法返回的是一个ZipInfo对象，表示zip文档中相应文件的信息。它支持如下属性：</p><p>ZipInfo.filename： 获取文件名称。</p><p>ZipInfo.date_time： 获取文件最后修改时间。返回一个包含6个元素的元组：(年, 月, 日, 时, 分, 秒)</p><p>ZipInfo.compress_type： 压缩类型。</p><p>ZipInfo.comment： 文档说明。</p><p>ZipInfo.extr： 扩展项数据。</p><p>ZipInfo.create_system： 获取创建该zip文档的系统。</p><p>ZipInfo.create_version： 获取 创建zip文档的PKZIP版本。</p><p>ZipInfo.extract_version： 获取 解压zip文档所需的PKZIP版本。</p><p>ZipInfo.reserved： 预留字段，当前实现总是返回0。</p><p>ZipInfo.flag_bits： zip标志位。</p><p>ZipInfo.volume： 文件头的卷标。</p><p>ZipInfo.internal_attr： 内部属性。</p><p>ZipInfo.external_attr： 外部属性。</p><p>ZipInfo.header_offset： 文件头偏移位。</p><p>ZipInfo.CRC： 未压缩文件的CRC-32。</p><p>ZipInfo.compress_size： 获取压缩后的大小。</p><p>ZipInfo.file_size： 获取未压缩的文件大小。<br>ZipInfo相关属性</p><p>ZipInfo.filename        获取文件名称。</p><p>ZipInfo.date_time       获取文件最后修改时间。返回一个包含6个元素的元组：(年, 月, 日, 时, 分, 秒)</p><p>ZipInfo.compress_type   压缩类型。</p><p>ZipInfo.comment         文档说明。</p><p>ZipInfo.extr            扩展项数据。</p><p>ZipInfo.create_system   获取创建该zip文档的系统。</p><p>ZipInfo.create_version  获取、创建zip文档的PKZIP版本。</p><p>ZipInfo.extract_versio  获取、解压zip文档所需的PKZIP版本。</p><p>ZipInfo.reserved        预留字段，当前实现总是返回0。</p><p>ZipInfo.flag_bits       zip标志位。</p><p>ZipInfo.volume          文件头的卷标。</p><p>ZipInfo.internal_attr   内部属性。</p><p>ZipInfo.external_attr   外部属性。</p><p>ZipInfo.header_offset   文件头偏移位。</p><p>ZipInfo.CRC             未压缩文件的CRC-32。</p><p>ZipInfo.compress_size   获取压缩后的大小。</p><p>ZipInfo.file_size       获取未压缩的文件大小</p><h2 id="1-创建一个-ZipFile-对象"><a href="#1-创建一个-ZipFile-对象" class="headerlink" title="1.创建一个 ZipFile 对象"></a>1.创建一个 ZipFile 对象</h2><p>要创建一个 ZipFile对象，就调用 zipfile.ZipFile()函数，向它传入一个字符串，表示.zip文件的文件名。请注意，zipfile 是 Python 模块的名称，ZipFile()是函数的名称。ZipFile 的构造方法有两个参数，第一个参数是必选参数，接受一个字符串格式的压缩包名称，第二个参数为<strong>可选</strong>参数，表示打开模式，类似于文件操作，有r&#x2F;w&#x2F;a三种模式，分别代表读、写、添加，默认为r，即读模式。压缩使用w，解压缩使用r。</p><p>mode可以省略<br>压缩需要把mode改为‘w’</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile=zipfile.ZipFile(<span class="hljs-string">&quot;test.zip&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>)<br></code></pre></td></tr></table></figure><p>解压需要把mode改为‘r’</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile=zipfile.ZipFile(<span class="hljs-string">&quot;test.zip&quot;</span>,<span class="hljs-string">&quot;r&quot;</span>)<br></code></pre></td></tr></table></figure><h2 id="2-添加压缩文件-or-选择解压文件"><a href="#2-添加压缩文件-or-选择解压文件" class="headerlink" title="2.添加压缩文件 or 选择解压文件"></a>2.添加压缩文件 or 选择解压文件</h2><h3 id="需要使用的方法"><a href="#需要使用的方法" class="headerlink" title="需要使用的方法"></a>需要使用的方法</h3><p> ZipFile.extract(member, path&#x3D;None, pwd&#x3D;None)¶</p><pre><code class="hljs">从归档中提取出一个成员放入当前工作目录；member 必须为成员的完整名称或 ZipInfo 对象。 成员的文件信息会尽可能精确地被提取。 path 指定一个要提取到的不同目录。 member 可以是一个文件名或 ZipInfo 对象。 pwd 是用于解密文件的密码。</code></pre><p> ZipFile.extractall(path&#x3D;None, members&#x3D;None, pwd&#x3D;None)</p><pre><code class="hljs">从归档中提取出所有成员放入当前工作目录。 path 指定一个要提取到的不同目录。 members 为可选项且必须为 namelist() 所返回列表的一个子集。 pwd 是用于解密文件的密码。</code></pre><p> ZipFile.write(filename, arcname&#x3D;None, compress_type&#x3D;None, compresslevel&#x3D;None)</p><pre><code class="hljs">将名为 filename 的文件写入归档，给予的归档名为 arcname (默认情况下将与 filename 一致，但是不带驱动器盘符并会移除开头的路径分隔符)。 compress_type 如果给出，它将覆盖作为构造器 compression 形参对于新条目所给出的值。 类似地，compresslevel 如果给出也将覆盖构造器。 归档必须使用 &#39;w&#39;, &#39;x&#39; 或 &#39;a&#39; 模式打开。</code></pre><p>第二个参数是“压缩类型”参数，它告诉计算机使用怎样的算法来压缩文件。可以总是将这个值设置为zipfile.ZIP_DEFLATED（这指定了 deflate 压缩算法，它对各种类型的数据都很有效）。</p><p>ZipFile.close()</p><pre><code class="hljs">关闭归档文件。 你必须在退出程序之前调用 close() 否则将不会写入关键记录数据。</code></pre><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>写入压缩文件</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile.write(<span class="hljs-string">r&quot;../test.py&quot;</span>)<br>zfile.close()//关闭对象<br></code></pre></td></tr></table></figure><p>解压文件</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile.extractall()//解压所有文件<br>zfile.extract(<span class="hljs-string">r&quot;test.py&quot;</span>)//解压指定文件<br>zfile.close()//关闭对象<br></code></pre></td></tr></table></figure><h2 id="3-其他常见方法"><a href="#3-其他常见方法" class="headerlink" title="3.其他常见方法"></a>3.其他常见方法</h2><p>ZipFile.getinfo(name)</p><pre><code class="hljs">返回一个 ZipInfo 对象，其中包含有关归档成员 name 的信息。 针对一个目前并不包含于归档中的名称调用 getinfo() 将会引发 KeyError。</code></pre><p>ZipFile.infolist()</p><pre><code class="hljs">返回一个列表，其中包含每个归档成员的 ZipInfo 对象。 如果是打开一个现有归档则这些对象的排列顺序与它们对应条目在磁盘上的实际 ZIP 文件中的顺序一致。</code></pre><p>ZipFile.namelist()</p><pre><code class="hljs">返回按名称排序的归档成员列表（也就是压缩包里的文件名）。</code></pre><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://docs.python.org/zh-cn/3/library/zipfile.html#zipfile.ZIP_BZIP2">https://docs.python.org/zh-cn/3/library/zipfile.html#zipfile.ZIP_BZIP2</a></p><p><a href="https://www.cnblogs.com/wangylblog/p/13925894.html">https://www.cnblogs.com/wangylblog/p/13925894.html</a></p><p><a href="https://blog.csdn.net/sinat_38682860/article/details/114176182">https://blog.csdn.net/sinat_38682860/article/details/114176182</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>python</tag>
+      
+      <tag>脚本</tag>
+      
+      <tag>编程</tag>
+      
+    </tags>
     
   </entry>
   
