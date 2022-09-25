@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>PHPSTORM配置debug的坑点</title>
+    <link href="/2022/09/25/PHPSTORM%E9%85%8D%E7%BD%AEdebug%E7%9A%84%E5%9D%91%E7%82%B9/"/>
+    <url>/2022/09/25/PHPSTORM%E9%85%8D%E7%BD%AEdebug%E7%9A%84%E5%9D%91%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<h1 id="PHPSTORM配置debug的坑点"><a href="#PHPSTORM配置debug的坑点" class="headerlink" title="PHPSTORM配置debug的坑点"></a>PHPSTORM配置debug的坑点</h1><p>本来前段时间就试过一次配置，但是奈何很多帖子都是重复的内容，因此我重复的配置失败。这里就记录一些可能别人帖子没提起的细节，不记录全过程。</p><p>我的配置环境</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">PHPSTORM</span> <span class="hljs-number">2022</span>.<span class="hljs-number">2</span>.<span class="hljs-number">2</span><br><span class="hljs-attribute">PHP7</span>.<span class="hljs-number">3</span>.<span class="hljs-number">4</span><br><span class="hljs-attribute">phpstudy_pro</span> <span class="hljs-number">8.1.1.3</span><br></code></pre></td></tr></table></figure><h2 id="一、xdebug配置"><a href="#一、xdebug配置" class="headerlink" title="一、xdebug配置"></a>一、xdebug配置</h2><p>info.php</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">phpinfo</span>();<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure><p>打开phpinfo的html，复制<strong>所有</strong>源代码</p><p>粘贴到<a href="https://xdebug.org/wizard">https://xdebug.org/wizard</a> 进行分析，会对你的PHP版本推荐出合适的xdebug版本。</p><h3 id="1-host和port"><a href="#1-host和port" class="headerlink" title="1.host和port"></a>1.host和port</h3><p>复制别人提供的xdebug配置内容时要注意</p><p>xdebug3和xdebug2的属性名存在差异，</p><p>xdebug.remote_host和xdebug.remote_port不适用，做出了以下更改：</p><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-title">xdebug</span>.remote_host <span class="hljs-comment">---&gt;  xdebug.client_host</span><br><span class="hljs-title">xdebug</span>.remote_<span class="hljs-keyword">port</span> <span class="hljs-comment">---&gt;  xdebug.client_port</span><br></code></pre></td></tr></table></figure><h3 id="2-zend-extension"><a href="#2-zend-extension" class="headerlink" title="2.zend_extension"></a>2.zend_extension</h3><p>zend_extension别忘了更换成自己的xdebug dll路径。</p><h3 id="3-xdebug-mode"><a href="#3-xdebug-mode" class="headerlink" title="3.xdebug.mode"></a>3.xdebug.mode</h3><p>xdebug.mode需要设为debug。</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">xdebug.mode</span>=debug<br></code></pre></td></tr></table></figure><p>这是我的xdebug配置，给大家参考一下：</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[xdebug]</span><br><span class="hljs-attr">zend_extension</span> = D:\phpstudy_pro\Extensions\php\php7.<span class="hljs-number">3.4</span>nts\ext\php_xdebug.dll<br><span class="hljs-attr">xdebug.remote_enable</span> = <span class="hljs-number">1</span><br><span class="hljs-attr">xdebug.remote_handler</span> = dbgp<br><span class="hljs-attr">xdebug.remote_mode</span> = req<br><span class="hljs-attr">xdebug.mode</span>=debug<br><span class="hljs-attr">xdebug.idekey</span> = <span class="hljs-string">&quot;PHPSTORM&quot;</span><br><span class="hljs-attr">xdebug.client_host</span>=<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><br><span class="hljs-attr">xdebug.client_port</span>=<span class="hljs-number">2333</span><br></code></pre></td></tr></table></figure><h2 id="二、验证"><a href="#二、验证" class="headerlink" title="二、验证"></a>二、验证</h2><p>配置完成后可以通过PHPSTORM中调试的验证进行配置验证</p><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209251443060.png" alt="image-20220925144304331"></p><p>这里的验证脚本路径一定要和服务器里的网站路径一致</p><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209251444026.png" alt="image-20220925144427791"></p><p>默认就是phpstudy的WWW路径，url不用改。</p><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209251445572.png" alt="image-20220925144523996"></p><p>正常配置成功是这样的：</p><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209251446439.png" alt="image-20220925144642550"></p><p>如果xdebug配置有问题的话，调试器拓展那一步会出错，建议回phpinfo检查一下（可能是host，port，idekey出错）。</p><p>然后配置浏览器插件xdebug helper。</p><h2 id="三、配置完成后"><a href="#三、配置完成后" class="headerlink" title="三、配置完成后"></a>三、配置完成后</h2><p>配置完xdebug后，可以开始debug</p><h3 id="开始debug打开的是一个空白界面"><a href="#开始debug打开的是一个空白界面" class="headerlink" title="开始debug打开的是一个空白界面"></a>开始debug打开的是一个空白界面</h3><p>这里需要编辑xdebug配置</p><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209251454133.png" alt="image-20220925145449058"></p><p>这里有一个起始url，改成我们要调试的php文件相对路径（这个文件需要在我们指定的网站服务器文件夹内，比如我的是<a href="http://www.ctf,那我的php文件就在www.ctf这个文件夹内)/">www.ctf，那我的php文件就在www.ctf这个文件夹内）</a></p><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209251457576.png" alt="image-20220925145701506"></p><p>浏览器也改成配置好了xdebug helper的浏览器。</p><p>别忘了修改侦听状态为如下，并且打上断点。</p><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209251500006.png" alt="image-20220925145959115"></p><p>如果都没问题，点击那个debug的臭虫标志就会使用默认浏览器打开我们的php文件。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>PHP</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>PHP</tag>
+      
+      <tag>配置</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022第五空间网络安全初赛</title>
     <link href="/2022/09/25/%E7%AC%AC%E4%BA%94%E7%A9%BA%E9%97%B4/"/>
     <url>/2022/09/25/%E7%AC%AC%E4%BA%94%E7%A9%BA%E9%97%B4/</url>
