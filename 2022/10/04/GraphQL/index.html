@@ -1,0 +1,783 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="ArushArk">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="在2022New Star碰到GraphQL相关题目（ezAPI），记录一下GraphQL的学习。 GraphQL简介GraphQL是由Facebook开发并于2015年公开发布的数据查询语言。是REST API的替代品。作为一种 API 查询语言，GraphQL 不要求实现它的应用服务器使用特定的编程语言或存储系统，且它与底层数据库无关，可以与MySQL数据库一起使用，也可以与Nosql数据库搭">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GraphQL浅记">
+<meta property="og:url" content="http://example.com/2022/10/04/GraphQL/index.html">
+<meta property="og:site_name" content="Come ON the way">
+<meta property="og:description" content="在2022New Star碰到GraphQL相关题目（ezAPI），记录一下GraphQL的学习。 GraphQL简介GraphQL是由Facebook开发并于2015年公开发布的数据查询语言。是REST API的替代品。作为一种 API 查询语言，GraphQL 不要求实现它的应用服务器使用特定的编程语言或存储系统，且它与底层数据库无关，可以与MySQL数据库一起使用，也可以与Nosql数据库搭">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/Users/yinbing/AppData/Roaming/Typora/typora-user-images/image-20221004200939127.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202210042341981.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202210042342282.png">
+<meta property="article:published_time" content="2022-10-04T15:39:21.000Z">
+<meta property="article:modified_time" content="2022-10-04T15:42:06.438Z">
+<meta property="article:author" content="ArushArk">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="GraphQL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/Users/yinbing/AppData/Roaming/Typora/typora-user-images/image-20221004200939127.png">
+  
+  
+  
+  <title>GraphQL浅记 - Come ON the way</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/mouse.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ArushArk</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/B1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="GraphQL浅记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-04 23:39" pubdate>
+          2022年10月4日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">GraphQL浅记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>在2022New Star碰到GraphQL相关题目（ezAPI），记录一下GraphQL的学习。</p>
+<h2 id="GraphQL简介"><a href="#GraphQL简介" class="headerlink" title="GraphQL简介"></a>GraphQL简介</h2><p>GraphQL是由Facebook开发并于2015年公开发布的<strong>数据查询语言</strong>。是REST API的替代品。作为一种 API 查询语言，GraphQL 不要求实现它的应用服务器使用特定的编程语言或存储系统，且它与底层数据库无关，可以与MySQL数据库一起使用，也可以与Nosql数据库搭配。</p>
+<p>与其类似的还有RESTful API，区别在于，RESTful API需要多个API实现不同的功能，而GraphQL获取多个资源，只用一个请求。但是也不是所有需求都适用GraphQL，简单的需求还是使用RESTful API，GraphQL查询的数据是图状数据结构，一些没有图的概念的数据使用GraphQL并没有显著的效果。</p>
+<p>SQL是结构化查询语言，GraphQL是图表化查询语言。</p>
+<h2 id="GraphQL查询响应格式"><a href="#GraphQL查询响应格式" class="headerlink" title="GraphQL查询响应格式"></a>GraphQL查询响应格式</h2><p>基本的GraphQL查询</p>
+<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs fsharp"><span class="hljs-keyword">query</span>&#123;<br>  <span class="hljs-keyword">user</span>&#123;<br>​    <span class="hljs-built_in">id</span><br>​    email<br>​    firstName<br>​    lastName<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>基本的GraphQL响应</p>
+<p>响应结果则是json类型：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs perl">&#123;<br>    <span class="hljs-string">&quot;data&quot;</span>: &#123;<br>        <span class="hljs-string">&quot;user&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;666&quot;</span>,<br>            <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<br>            <span class="hljs-string">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;xx&quot;</span>,<br>            <span class="hljs-string">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;xx&quot;</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>官方文档：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">查询和其结果拥有几乎一样的结构。这是 GraphQL 最重要的特性，因为这样一来，你就总是能得到你想要的数据，而服务器也准确地知道客户端请求的字段。<br></code></pre></td></tr></table></figure>
+
+<p> 例如这样的</p>
+<p><img src="/Users/yinbing\AppData\Roaming\Typora\typora-user-images\image-20221004200939127.png" srcset="/img/loading.gif" lazyload alt="image-20221004200939127"></p>
+<p>类似于json，但是有很多换行符。</p>
+<h2 id="GraphQL主要操作"><a href="#GraphQL主要操作" class="headerlink" title="GraphQL主要操作"></a>GraphQL主要操作</h2><h3 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h3><p>GraphQL 关于请求对象上的特定字段，即要操作（查询更改…）的对象。</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>GraphQL 对象类型上的每一个字段都可能有零个或者多个参数。</p>
+<p><strong>GraphQL基本参数类型</strong></p>
+<ul>
+<li>String, Int, Float, <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Boolean&spm=1001.2101.3001.7020">Boolean</a>和ID。在schema声明时直接使用。 （ID不能重复使用）</li>
+<li>!（叹号）代表参数不能为空。</li>
+</ul>
+<h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><p>类似于SQL的增删改查，GraphQL主要有三种操作query、mutation 和 subscription，分别对应查询、变更和订阅。</p>
+<p>官方文档：</p>
+<figure class="highlight graphql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs graphql">操作类型可以是 <span class="hljs-keyword">query</span>、<span class="hljs-keyword">mutation</span> 或 <span class="hljs-keyword">subscription</span>，描述你打算做什么类型的操作。操作类型是必需的，除非你使用查询简写语法，在这种情况下，你无法为操作提供名称或变量定义。<br></code></pre></td></tr></table></figure>
+
+<h3 id="内省查询"><a href="#内省查询" class="headerlink" title="内省查询"></a>内省查询</h3><p>GraphQL内置了内省系统，通过它给出的内省方法，我们可以获得对象名称、类型、参数等多种信息。</p>
+<p>官方文档：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sqf">我们也可以通过查询 <span class="hljs-variable">__schema</span> 字段来向 GraphQL 询问哪些类型是可用的。一个查询的根类型总是有 <span class="hljs-variable">__schema</span> 这个字段。<br><br>有好多类型！它们都是什么？我们来总结一下：<br>    Query, Character, Human, Episode, Droid - 这些是我们在类型系统中定义的类型。<br>    String, Boolean - 这些是内建的标量，由类型系统提供。<br>    <span class="hljs-variable">__Schema</span>, <span class="hljs-variable">__Type</span>, <span class="hljs-variable">__TypeKind</span>, <span class="hljs-variable">__Field</span>, <span class="hljs-variable">__InputValue</span>, <span class="hljs-variable">__EnumValue</span>, <span class="hljs-variable">__Directive</span> - 这些有着两个下划线的类型是内省系统的一部分。<br></code></pre></td></tr></table></figure>
+
+<p>我的理解：information_schema（像不像 (*^▽^*)</p>
+<h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><p> 上述查询是<strong>可交互的</strong>。也就是你可以按你喜欢来改变查询，然后看看新的结果。(也就是可以更改查询语句得到想要的结果)</p>
+<p>GraphQL 对象类型上的每一个字段都可能有零个或者多个参数。（参数个数不同可能得不到我们想要的内容，比如flag）</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight wren"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs wren"><span class="hljs-variable">data</span><span class="hljs-operator">=</span>&#123;<span class="hljs-string">&quot;query&quot;</span>:<span class="hljs-string">&quot;query&#123;<span class="hljs-char escape_">\n</span>users_user_by_pk(id:1)&#123;<span class="hljs-char escape_">\n</span>name<span class="hljs-char escape_">\n</span>&#125;<span class="hljs-char escape_">\n</span>&#125;<span class="hljs-char escape_">\n</span>&quot;</span>,<span class="hljs-string">&quot;variables&quot;</span>:<span class="hljs-literal">null</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs 1c">&#123;<span class="hljs-string">&quot;query&quot;</span>:<br>	<span class="hljs-string">&quot;query&#123;</span><br>		users_user_by_pk(id:<span class="hljs-number">1</span>)<br>	&#123;<br>	name<br>	&#125;<br>	&#125;<br><span class="hljs-string">&quot;,&quot;</span>variables<span class="hljs-string">&quot;:null&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>从users_user_by_pk这个接口查询id&#x3D;1的字段的name属性。</p>
+<h2 id="GraphQL-端点"><a href="#GraphQL-端点" class="headerlink" title="GraphQL 端点"></a>GraphQL 端点</h2><p>常见的GraphQL端点：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/graphql/</span><br><span class="hljs-regexp">/graphql/</span>console/<br>/graphql.php<br><span class="hljs-regexp">/graphiql/</span><br>/graphiql.php<br>[...]<br></code></pre></td></tr></table></figure>
+
+<p>可以通过向端点发送一个无效查询，是否报错判断端点。</p>
+<p>在测试应用程序时，验证是否可以在没有一般授权令牌标头的情况下发出请求，因为GraphQL本身没有提供任何数据保护手段，只能通过其他方法进行访问控制，不让端点被恶意利用。</p>
+<h2 id="GraphQL可能存在的隐患"><a href="#GraphQL可能存在的隐患" class="headerlink" title="GraphQL可能存在的隐患"></a>GraphQL可能存在的隐患</h2><h3 id="未授权访问"><a href="#未授权访问" class="headerlink" title="未授权访问"></a>未授权访问</h3><p>开发者在使用时经常会忽略接口的鉴权问题。导致访问控制容易被破坏，不安全的对象直接引用甚至SQL或NoSQL进行注入。有时候客户端调用查询接口，直接传入了id等信息并未做好权限校验，就有可能存在水平越权。</p>
+<h3 id="GraphQL内省查询"><a href="#GraphQL内省查询" class="headerlink" title="GraphQL内省查询"></a>GraphQL内省查询</h3><p>最常见的问题，内省查询本来应该是仅允许内部访问，但<strong>配置错误</strong>导致任何攻击者可以利用内省查询。</p>
+<p>payload：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="hljs-template-variable">&#123;&quot;query&quot;:&quot;&#123;__schema&#123;queryType&#123;name&#125;</span><span class="language-xml">,mutationType</span><span class="hljs-template-variable">&#123;name&#125;</span><span class="language-xml">,subscriptionType</span><span class="hljs-template-variable">&#123;name&#125;</span><span class="language-xml">,types</span><span class="hljs-template-variable">&#123;...FullType&#125;</span><span class="language-xml">,directives</span><span class="hljs-template-variable">&#123;name,description,locations,args&#123;...InputValue&#125;</span><span class="language-xml">&#125;&#125;&#125;,fragment FullType on __Type</span><span class="hljs-template-variable">&#123;kind,name,description,fields(includeDeprecated:true)&#123;name,description,args&#123;...InputValue&#125;</span><span class="language-xml">,type</span><span class="hljs-template-variable">&#123;...TypeRef&#125;</span><span class="language-xml">,isDeprecated,deprecationReason&#125;,inputFields</span><span class="hljs-template-variable">&#123;...InputValue&#125;</span><span class="language-xml">,interfaces</span><span class="hljs-template-variable">&#123;...TypeRef&#125;</span><span class="language-xml">,enumValues(includeDeprecated:true)</span><span class="hljs-template-variable">&#123;name,description,isDeprecated,deprecationReason&#125;</span><span class="language-xml">,possibleTypes</span><span class="hljs-template-variable">&#123;...TypeRef&#125;</span><span class="language-xml">&#125;,fragment InputValue on __InputValue</span><span class="hljs-template-variable">&#123;name,description,type&#123;...TypeRef&#125;</span><span class="language-xml">,defaultValue&#125;,fragment TypeRef on __Type</span><span class="hljs-template-variable">&#123;kind,name,ofType&#123;kind,name,ofType&#123;kind,name,ofType&#123;kind,name,ofType&#123;kind,name,ofType&#123;kind,name,ofType&#123;kind,name,ofType&#123;kind,name&#125;</span><span class="language-xml">&#125;&#125;&#125;&#125;&#125;&#125;&#125;&quot;,&quot;variables&quot;:</span><span class="hljs-template-variable">&#123;&#125;</span><span class="language-xml">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>返回包返回的就是该API端点的所有信息。</p>
+<p>通过内省查询得到很多接口信息，造成信息泄露。</p>
+<h3 id="嵌套查询DoS"><a href="#嵌套查询DoS" class="headerlink" title="嵌套查询DoS"></a>嵌套查询DoS</h3><p>当业务的变量互相关联，如以下graphql定义为这样时，就可能无限展开，造成拒绝服务。</p>
+<p>它们可以允许恶意客户端通过<strong>过度复杂的查询</strong>来执行DoS（拒绝服务）攻击，占用服务器的资源。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-keyword">type</span> <span class="hljs-type">Thread</span> &#123;<br>  messages(first: <span class="hljs-type">Int</span>, after: <span class="hljs-type">String</span>): [<span class="hljs-type">Message</span>]<br>&#125;<br><span class="hljs-keyword">type</span> <span class="hljs-type">Message</span> &#123;<br>  thread: <span class="hljs-type">Thread</span><br>&#125;<br><span class="hljs-keyword">type</span> <span class="hljs-type">Query</span> &#123;<br>  thread(id: <span class="hljs-type">ID</span>!): <span class="hljs-type">Thread</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202210042341981.png" srcset="/img/loading.gif" lazyload alt="image-20221004232945314"></p>
+<p>针对DoS的简单修复方式可以是设置超时，最大深度或查询复杂度阈值。</p>
+<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><p> graphql的sql注入与一般的sql注入类似，都是可以通过构造恶意语句达到注入获取数据或改变查询逻辑的目的。p神在先知大会上讲过该类问题，借用p神的2张PPT。</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202210042342282.png" srcset="/img/loading.gif" lazyload alt="image-20221004233248293"></p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>参考2022NewStarCTF ezAPI。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.doyensec.com/2018/05/17/graphql-security-overview.html">https://blog.doyensec.com/2018/05/17/graphql-security-overview.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/147455#h2-9">https://www.anquanke.com/post/id/147455#h2-9</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.secpulse.com/archives/148242.html">https://www.secpulse.com/archives/148242.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124019191#">https://zhuanlan.zhihu.com/p/124019191#</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/264629587">https://www.zhihu.com/question/264629587</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/506391425">https://zhuanlan.zhihu.com/p/506391425</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/A_bad_horse/article/details/105377150">https://blog.csdn.net/A_bad_horse/article/details/105377150</a></p>
+<p>官方文档：</p>
+<p><a target="_blank" rel="noopener" href="https://graphql.bootcss.com/">https://graphql.bootcss.com/</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/web/" class="category-chain-item">web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/web/">#web</a>
+      
+        <a href="/tags/sql/">#sql</a>
+      
+        <a href="/tags/GraphQL/">#GraphQL</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>GraphQL浅记</div>
+      <div>http://example.com/2022/10/04/GraphQL/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ArushArk</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年10月4日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年10月4日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/04/2022THUCTF/" title="2022THU CTF">
+                        <span class="hidden-mobile">2022THU CTF</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/diy/qipao.js"></script>
+<script src="/js/diy/timeDate.js"></script>
+<script src="/js/diy/shubiaozi.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
