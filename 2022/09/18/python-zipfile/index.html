@@ -24,7 +24,7 @@
 <meta property="og:description" content="python_Zipfile库因为近期nepCTF2022和练习都碰到了压缩包套娃的题目，写了两个脚本，在这里记录一下zipfile的学习。 简介标准库zipfile，可以用来处理压缩文件。zipfile是一个用来压缩文件和解压缩文件的模块，它有两个常用的类，分别是ZipFile和ZipInfo。其中ZipFile是主要的类，用来创建和读取zip文件，而ZipInfo是存储的zip文件的每个文件的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-18T10:59:34.000Z">
-<meta property="article:modified_time" content="2022-09-18T11:02:47.232Z">
+<meta property="article:modified_time" content="2022-10-05T03:23:47.370Z">
 <meta property="article:author" content="ArushArk">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="脚本">
@@ -75,7 +75,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"PERL"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -307,7 +307,7 @@
                 <h2 id="python-Zipfile库"><a href="#python-Zipfile库" class="headerlink" title="python_Zipfile库"></a>python_Zipfile库</h2><p>因为近期nepCTF2022和练习都碰到了压缩包套娃的题目，写了两个脚本，在这里记录一下zipfile的学习。</p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>标准库zipfile，可以用来处理压缩文件。<br>zipfile是一个用来压缩文件和解压缩文件的模块，它有两个常用的类，分别是ZipFile和ZipInfo。<br>其中ZipFile是主要的类，用来创建和读取zip文件，而ZipInfo是存储的zip文件的每个文件的信息的。</p>
 <h2 id="ZipFile对象"><a href="#ZipFile对象" class="headerlink" title="ZipFile对象"></a>ZipFile对象</h2><p>ZipFile 对象在概念上与 File 对象相似。<br><strong>官方文档定义：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">打开一个 ZIP 文件，file 为一个指向文件的路径（字符串），一个类文件对象或者一个 path-like <span class="hljs-built_in">object</span>。<br>形参 mode 应当为 <span class="hljs-string">&#x27;r&#x27;</span> 来读取一个存在的文件，<span class="hljs-string">&#x27;w&#x27;</span> 来截断并写入新的文件， <span class="hljs-string">&#x27;a&#x27;</span> 来添加到一个存在的文件，或者 <span class="hljs-string">&#x27;x&#x27;</span> 来仅新建并写入新的文件。如果 mode 为 <span class="hljs-string">&#x27;x&#x27;</span> 并且 file 指向已经存在的文件，则抛出 FileExistsError。如果 mode 为 <span class="hljs-string">&#x27;a&#x27;</span> 且 file 为已存在的文件，则格外的文件将被加入。如果 file 不指向 ZIP 文件，之后一个新的 ZIP 归档将被追加为此文件。这是为了将 ZIP 归档添加到另一个文件（例如 python.exe）。如果 mode 为 <span class="hljs-string">&#x27;a&#x27;</span> 并且文件不存在， 则会新建。如果 mode 为 <span class="hljs-string">&#x27;r&#x27;</span> 或 <span class="hljs-string">&#x27;a&#x27;</span>， 则文件应当可定位。<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">打开一个 ZIP 文件，file 为一个指向文件的路径（字符串），一个类文件对象或者一个 path-like <span class="hljs-built_in">object</span>。<br>形参 mode 应当为 <span class="hljs-string">&#x27;r&#x27;</span> 来读取一个存在的文件，<span class="hljs-string">&#x27;w&#x27;</span> 来截断并写入新的文件， <span class="hljs-string">&#x27;a&#x27;</span> 来添加到一个存在的文件，<br>或者 <span class="hljs-string">&#x27;x&#x27;</span> 来仅新建并写入新的文件。如果 mode 为 <span class="hljs-string">&#x27;x&#x27;</span> 并且 file 指向已经存在的文件，<br>则抛出 FileExistsError。如果 mode 为 <span class="hljs-string">&#x27;a&#x27;</span> 且 file 为已存在的文件，则格外的文件将被加入。<br>如果 file 不指向 ZIP 文件，之后一个新的 ZIP 归档将被追加为此文件。<br>这是为了将 ZIP 归档添加到另一个文件（例如 python.exe）。<br>如果 mode 为 <span class="hljs-string">&#x27;a&#x27;</span> 并且文件不存在， 则会新建。如果 mode 为 <span class="hljs-string">&#x27;r&#x27;</span> 或 <span class="hljs-string">&#x27;a&#x27;</span>， 则文件应当可定位。<br></code></pre></td></tr></table></figure>
 
 <h2 id="ZipInfo对象"><a href="#ZipInfo对象" class="headerlink" title="ZipInfo对象"></a>ZipInfo对象</h2><p><strong>通过ZipFile的getinfo方法得到ZipInfo对象。</strong></p>
 <p>ZipFile.getinfo(name) 方法返回的是一个ZipInfo对象，表示zip文档中相应文件的信息。它支持如下属性：</p>
@@ -354,13 +354,19 @@
 
 
 <h2 id="2-添加压缩文件-or-选择解压文件"><a href="#2-添加压缩文件-or-选择解压文件" class="headerlink" title="2.添加压缩文件 or 选择解压文件"></a>2.添加压缩文件 or 选择解压文件</h2><h3 id="需要使用的方法"><a href="#需要使用的方法" class="headerlink" title="需要使用的方法"></a>需要使用的方法</h3><p> ZipFile.extract(member, path&#x3D;None, pwd&#x3D;None)¶</p>
-<pre><code class="hljs">从归档中提取出一个成员放入当前工作目录；member 必须为成员的完整名称或 ZipInfo 对象。 成员的文件信息会尽可能精确地被提取。 path 指定一个要提取到的不同目录。 member 可以是一个文件名或 ZipInfo 对象。 pwd 是用于解密文件的密码。
+<pre><code class="hljs">从归档中提取出一个成员放入当前工作目录；member 必须为成员的完整名称或 ZipInfo 对象。
+成员的文件信息会尽可能精确地被提取。 path 指定一个要提取到的不同目录。
+member 可以是一个文件名或 ZipInfo 对象。 pwd 是用于解密文件的密码。
 </code></pre>
 <p> ZipFile.extractall(path&#x3D;None, members&#x3D;None, pwd&#x3D;None)</p>
-<pre><code class="hljs">从归档中提取出所有成员放入当前工作目录。 path 指定一个要提取到的不同目录。 members 为可选项且必须为 namelist() 所返回列表的一个子集。 pwd 是用于解密文件的密码。
+<pre><code class="hljs">从归档中提取出所有成员放入当前工作目录。 path 指定一个要提取到的不同目录。
+members 为可选项且必须为 namelist() 所返回列表的一个子集。 pwd 是用于解密文件的密码。
 </code></pre>
 <p> ZipFile.write(filename, arcname&#x3D;None, compress_type&#x3D;None, compresslevel&#x3D;None)</p>
-<pre><code class="hljs">将名为 filename 的文件写入归档，给予的归档名为 arcname (默认情况下将与 filename 一致，但是不带驱动器盘符并会移除开头的路径分隔符)。 compress_type 如果给出，它将覆盖作为构造器 compression 形参对于新条目所给出的值。 类似地，compresslevel 如果给出也将覆盖构造器。 归档必须使用 &#39;w&#39;, &#39;x&#39; 或 &#39;a&#39; 模式打开。
+<pre><code class="hljs">将名为 filename 的文件写入归档，给予的归档名为 arcname 
+(默认情况下将与 filename 一致，但是不带驱动器盘符并会移除开头的路径分隔符)。 
+compress_type 如果给出，它将覆盖作为构造器 compression 形参对于新条目所给出的值。
+类似地，compresslevel 如果给出也将覆盖构造器。 归档必须使用 &#39;w&#39;, &#39;x&#39; 或 &#39;a&#39; 模式打开。
 </code></pre>
 <p>第二个参数是“压缩类型”参数，它告诉计算机使用怎样的算法来压缩文件。可以总是将这个值设置为zipfile.ZIP_DEFLATED（这指定了 deflate 压缩算法，它对各种类型的数据都很有效）。</p>
 <p>ZipFile.close()</p>
@@ -373,10 +379,12 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">zfile.extractall()//解压所有文件<br>zfile.extract(<span class="hljs-string">r&quot;test.py&quot;</span>)//解压指定文件<br>zfile.close()//关闭对象<br></code></pre></td></tr></table></figure>
 
 <h2 id="3-其他常见方法"><a href="#3-其他常见方法" class="headerlink" title="3.其他常见方法"></a>3.其他常见方法</h2><p>ZipFile.getinfo(name)</p>
-<pre><code class="hljs">返回一个 ZipInfo 对象，其中包含有关归档成员 name 的信息。 针对一个目前并不包含于归档中的名称调用 getinfo() 将会引发 KeyError。
+<pre><code class="hljs">返回一个 ZipInfo 对象，其中包含有关归档成员 name 的信息。 
+针对一个目前并不包含于归档中的名称调用 getinfo() 将会引发 KeyError。
 </code></pre>
 <p>ZipFile.infolist()</p>
-<pre><code class="hljs">返回一个列表，其中包含每个归档成员的 ZipInfo 对象。 如果是打开一个现有归档则这些对象的排列顺序与它们对应条目在磁盘上的实际 ZIP 文件中的顺序一致。
+<pre><code class="hljs">返回一个列表，其中包含每个归档成员的 ZipInfo 对象。 
+如果是打开一个现有归档则这些对象的排列顺序与它们对应条目在磁盘上的实际 ZIP 文件中的顺序一致。
 </code></pre>
 <p>ZipFile.namelist()</p>
 <pre><code class="hljs">返回按名称排序的归档成员列表（也就是压缩包里的文件名）。
@@ -452,7 +460,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年9月18日</div>
+          <div>2022年10月5日</div>
         </div>
       
       
@@ -483,9 +491,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/18/web%E6%B5%85%E8%AE%B0/" title="web浅记">
+                      <a href="/2022/09/18/web%E6%B5%85%E8%AE%B0/" title="web细节浅记">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">web浅记</span>
+                        <span class="hidden-mobile">web细节浅记</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

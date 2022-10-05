@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202210042341981.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202210042342282.png">
 <meta property="article:published_time" content="2022-10-04T15:39:21.000Z">
-<meta property="article:modified_time" content="2022-10-04T15:42:06.438Z">
+<meta property="article:modified_time" content="2022-10-05T03:22:23.580Z">
 <meta property="article:author" content="ArushArk">
 <meta property="article:tag" content="web">
 <meta property="article:tag" content="sql">
@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"PERL"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -320,7 +320,7 @@
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs perl">&#123;<br>    <span class="hljs-string">&quot;data&quot;</span>: &#123;<br>        <span class="hljs-string">&quot;user&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;666&quot;</span>,<br>            <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<br>            <span class="hljs-string">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;xx&quot;</span>,<br>            <span class="hljs-string">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;xx&quot;</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>官方文档：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">查询和其结果拥有几乎一样的结构。这是 GraphQL 最重要的特性，因为这样一来，你就总是能得到你想要的数据，而服务器也准确地知道客户端请求的字段。<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">查询和其结果拥有几乎一样的结构。这是 GraphQL 最重要的特性，<br>因为这样一来，你就总是能得到你想要的数据，而服务器也准确地知道客户端请求的字段。<br></code></pre></td></tr></table></figure>
 
 <p> 例如这样的</p>
 <p><img src="/Users/yinbing\AppData\Roaming\Typora\typora-user-images\image-20221004200939127.png" srcset="/img/loading.gif" lazyload alt="image-20221004200939127"></p>
@@ -334,11 +334,11 @@
 </ul>
 <h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><p>类似于SQL的增删改查，GraphQL主要有三种操作query、mutation 和 subscription，分别对应查询、变更和订阅。</p>
 <p>官方文档：</p>
-<figure class="highlight graphql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs graphql">操作类型可以是 <span class="hljs-keyword">query</span>、<span class="hljs-keyword">mutation</span> 或 <span class="hljs-keyword">subscription</span>，描述你打算做什么类型的操作。操作类型是必需的，除非你使用查询简写语法，在这种情况下，你无法为操作提供名称或变量定义。<br></code></pre></td></tr></table></figure>
+<figure class="highlight graphql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs graphql">操作类型可以是 <span class="hljs-keyword">query</span>、<span class="hljs-keyword">mutation</span> 或 <span class="hljs-keyword">subscription</span>，<br>描述你打算做什么类型的操作。操作类型是必需的，<br>除非你使用查询简写语法，在这种情况下，你无法为操作提供名称或变量定义。<br></code></pre></td></tr></table></figure>
 
 <h3 id="内省查询"><a href="#内省查询" class="headerlink" title="内省查询"></a>内省查询</h3><p>GraphQL内置了内省系统，通过它给出的内省方法，我们可以获得对象名称、类型、参数等多种信息。</p>
 <p>官方文档：</p>
-<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sqf">我们也可以通过查询 <span class="hljs-variable">__schema</span> 字段来向 GraphQL 询问哪些类型是可用的。一个查询的根类型总是有 <span class="hljs-variable">__schema</span> 这个字段。<br><br>有好多类型！它们都是什么？我们来总结一下：<br>    Query, Character, Human, Episode, Droid - 这些是我们在类型系统中定义的类型。<br>    String, Boolean - 这些是内建的标量，由类型系统提供。<br>    <span class="hljs-variable">__Schema</span>, <span class="hljs-variable">__Type</span>, <span class="hljs-variable">__TypeKind</span>, <span class="hljs-variable">__Field</span>, <span class="hljs-variable">__InputValue</span>, <span class="hljs-variable">__EnumValue</span>, <span class="hljs-variable">__Directive</span> - 这些有着两个下划线的类型是内省系统的一部分。<br></code></pre></td></tr></table></figure>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sqf">我们也可以通过查询 <span class="hljs-variable">__schema</span> 字段来向 GraphQL 询问哪些类型是可用的。<br>一个查询的根类型总是有 <span class="hljs-variable">__schema</span> 这个字段。<br><br>有好多类型！它们都是什么？我们来总结一下：<br>    Query, Character, Human, Episode, Droid <br>    - 这些是我们在类型系统中定义的类型。<br>    String, Boolean <br>    - 这些是内建的标量，由类型系统提供。<br>    <span class="hljs-variable">__Schema</span>, <span class="hljs-variable">__Type</span>, <span class="hljs-variable">__TypeKind</span>, <span class="hljs-variable">__Field</span>, <span class="hljs-variable">__InputValue</span>, <span class="hljs-variable">__EnumValue</span>, <span class="hljs-variable">__Directive</span> <br>    - 这些有着两个下划线的类型是内省系统的一部分。<br></code></pre></td></tr></table></figure>
 
 <p>我的理解：information_schema（像不像 (*^▽^*)</p>
 <h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><p> 上述查询是<strong>可交互的</strong>。也就是你可以按你喜欢来改变查询，然后看看新的结果。(也就是可以更改查询语句得到想要的结果)</p>
@@ -446,7 +446,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年10月4日</div>
+          <div>2022年10月5日</div>
         </div>
       
       

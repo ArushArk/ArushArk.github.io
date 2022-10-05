@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209272043180.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202209272046789.png">
 <meta property="article:published_time" content="2022-10-04T11:27:29.000Z">
-<meta property="article:modified_time" content="2022-10-04T11:43:05.592Z">
+<meta property="article:modified_time" content="2022-10-05T03:20:10.022Z">
 <meta property="article:author" content="ArushArk">
 <meta property="article:tag" content="web">
 <meta property="article:tag" content="NewStar">
@@ -85,7 +85,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"PERL"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -359,12 +359,12 @@
 
 
 
-<h1 id="web第二周"><a href="#web第二周" class="headerlink" title="web第二周"></a>web第二周</h1><h2 id="Word-For-You-2-Gen"><a href="#Word-For-You-2-Gen" class="headerlink" title="Word-For-You(2 Gen)"></a>Word-For-You(2 Gen)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">哇哇哇，我把查询界面改了，现在你们不能从数据库中拿到东西了吧哈哈（不过为了调试的代码似乎忘记删除了<br></code></pre></td></tr></table></figure>
+<h1 id="web第二周"><a href="#web第二周" class="headerlink" title="web第二周"></a>web第二周</h1><h2 id="Word-For-You-2-Gen"><a href="#Word-For-You-2-Gen" class="headerlink" title="Word-For-You(2 Gen)"></a>Word-For-You(2 Gen)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">哇哇哇，我把查询界面改了，现在你们不能从数据库<br>中拿到东西了吧哈哈（不过为了调试的代码似乎忘记删除了<br></code></pre></td></tr></table></figure>
 
 <p>报错注入，就是查flag有点麻烦，显示不全</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1</span>&#x27; and updatexml(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0</span>x7e,(select substr(group_concat(text),<span class="hljs-number">156</span>,<span class="hljs-number">200</span>)from wfy.wfy_comments),<span class="hljs-number">0</span>x7e),<span class="hljs-number">3</span>) or &#x27;<br></code></pre></td></tr></table></figure>
 
-<h2 id="IncludeOne"><a href="#IncludeOne" class="headerlink" title="IncludeOne"></a>IncludeOne</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">文件包含漏洞系列第一题，也不知道是不是真的随机？ 出题人丢给你了一个工具：https:<span class="hljs-regexp">//</span>www.openwall.com<span class="hljs-regexp">/php_mt_seed/</span><br></code></pre></td></tr></table></figure>
+<h2 id="IncludeOne"><a href="#IncludeOne" class="headerlink" title="IncludeOne"></a>IncludeOne</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">文件包含漏洞系列第一题，也不知道是不是真的随机？ <br>出题人丢给你了一个工具：https:<span class="hljs-regexp">//</span>www.openwall.com<span class="hljs-regexp">/php_mt_seed/</span><br></code></pre></td></tr></table></figure>
 
 <p>伪随机数漏洞，下载工具后爆破出seed</p>
 <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">第一次使用工具，进入目录后，使用make命令，生成 php<span class="hljs-emphasis">_mt_seed文件以后就不用输入了。</span><br><span class="hljs-emphasis">使用./php_mt_</span>seed + 随机数即可。<br></code></pre></td></tr></table></figure>
@@ -511,7 +511,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年10月4日</div>
+          <div>2022年10月5日</div>
         </div>
       
       
