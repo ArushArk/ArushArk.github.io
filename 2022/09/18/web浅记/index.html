@@ -16,16 +16,16 @@
   <meta name="author" content="Aru3h@rk">
   <meta name="keywords" content="">
   
-    <meta name="description" content="记得比较杂，一些web的小细节，持续更新。 1echo命令执行系统命令 1echo&#96;nl fl&amp;#x27;&amp;#x27;ag.p?p&#96;;  2文件包含include()，include可以无括号包含 3php7中，assert不再是函数，变成了一个语言结构（类似eval），不能再作为函数名动态执行代码。 4自增RCE可以借助借助NaN和INF NaN（Not a Number，非数）是计算机科学中数">
+    <meta name="description" content="记得比较杂，一些web的小细节，持续更新。 php1echo命令执行系统命令 1echo&#96;nl fl&amp;#x27;&amp;#x27;ag.p?p&#96;;  2文件包含include()，include可以无括号包含 3php7中，assert不再是函数，变成了一个语言结构（类似eval），不能再作为函数名动态执行代码。 4自增RCE可以借助借助NaN和INF NaN（Not a Number，非数）是计算机科">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web细节浅记">
 <meta property="og:url" content="https://emoment.top/2022/09/18/web%E6%B5%85%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Aru3h@rk&#39;s Blog">
-<meta property="og:description" content="记得比较杂，一些web的小细节，持续更新。 1echo命令执行系统命令 1echo&#96;nl fl&amp;#x27;&amp;#x27;ag.p?p&#96;;  2文件包含include()，include可以无括号包含 3php7中，assert不再是函数，变成了一个语言结构（类似eval），不能再作为函数名动态执行代码。 4自增RCE可以借助借助NaN和INF NaN（Not a Number，非数）是计算机科学中数">
+<meta property="og:description" content="记得比较杂，一些web的小细节，持续更新。 php1echo命令执行系统命令 1echo&#96;nl fl&amp;#x27;&amp;#x27;ag.p?p&#96;;  2文件包含include()，include可以无括号包含 3php7中，assert不再是函数，变成了一个语言结构（类似eval），不能再作为函数名动态执行代码。 4自增RCE可以借助借助NaN和INF NaN（Not a Number，非数）是计算机科">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202210051138230.png">
 <meta property="article:published_time" content="2022-09-18T11:18:06.000Z">
-<meta property="article:modified_time" content="2022-10-05T03:39:15.199Z">
+<meta property="article:modified_time" content="2022-10-27T15:18:17.335Z">
 <meta property="article:author" content="Aru3h@rk">
 <meta property="article:tag" content="web">
 <meta property="article:tag" content="浅记">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          596 字
+          694 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          5 分钟
+          3 分钟
         
       </span>
     
@@ -317,7 +317,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年10月5日 中午
+                    本文最后更新于：2022年10月27日 晚上
                   
                 
               </p>
@@ -326,7 +326,7 @@
               <div class="markdown-body">
                 
                 <p>记得比较杂，一些web的小细节，持续更新。</p>
-<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>echo命令执行系统命令</p>
+<h2 id="php"><a href="#php" class="headerlink" title="php"></a>php</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>echo命令执行系统命令</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">echo</span>`nl fl<span class="hljs-string">&#x27;&#x27;</span>ag.p?p`;<br></code></pre></td></tr></table></figure>
 
 <h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>文件包含include()，include可以无括号包含</p>
@@ -345,8 +345,12 @@
 
 <p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202210051138230.png" srcset="/img/loading.gif" lazyload alt="image-20221005113821225"></p>
 <p>虽然报错，但成功获得。</p>
-<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>sql注入时长度超长导致的报错是因为sql_mode为严格模式</p>
-<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>宽字节注入payload构造，宽字节在线urldecode</p>
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>php遇到不认识的协议就会当目录处理</p>
+<p>比如0:&#x2F;&#x2F;</p>
+<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>php引用，就是在变量或者函数、对象等前面加上&amp;符号</p>
+<p>表示不同变量指向同一个内容（反序列化时也可使用）</p>
+<h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><h3 id="1-1"><a href="#1-1" class="headerlink" title="1"></a>1</h3><p>sql注入时长度超长导致的报错是因为sql_mode为严格模式</p>
+<h3 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h3><p>宽字节注入payload构造，宽字节在线urldecode</p>
 <p><a target="_blank" rel="noopener" href="http://www.mytju.com/classcode/tools/urldecode_gb2312.asp">http://www.mytju.com/classcode/tools/urldecode_gb2312.asp</a></p>
 <p>转义字符为</p>
 <figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm"><span class="hljs-variable">%5</span><span class="hljs-keyword">c</span><span class="hljs-variable">%27</span><br></code></pre></td></tr></table></figure>
@@ -421,7 +425,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年10月5日</div>
+          <div>2022年10月27日</div>
         </div>
       
       
