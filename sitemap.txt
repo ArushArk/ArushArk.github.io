@@ -1,3 +1,4 @@
+https://emoment.top/2022/11/05/2022ISCTF/
 https://emoment.top/2022/10/10/2022HNCTF/
 https://emoment.top/2022/09/18/web%E6%B5%85%E8%AE%B0/
 https://emoment.top/2022/10/04/2022THUCTF/
@@ -27,6 +28,7 @@ https://emoment.top/tags/2022/
 https://emoment.top/tags/HNCTF/
 https://emoment.top/tags/php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/
 https://emoment.top/tags/%E5%AD%97%E7%AC%A6%E9%80%83%E9%80%B8/
+https://emoment.top/tags/ISCTF/
 https://emoment.top/categories/writeup/
 https://emoment.top/categories/web/
 https://emoment.top/categories/%E7%BC%96%E7%A8%8B/
